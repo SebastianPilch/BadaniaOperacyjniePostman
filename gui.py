@@ -3,19 +3,28 @@ import Graf
 import Paczka_Paczkomat as PP
 from matplotlib import pyplot as plt
 import PySimpleGUI as sg
-import Krzyzowanie as Krz# Part 1 - The import
+import io
+from PIL import Image
+import cloudscraper
 
-# Define the window's contents
+sg.theme('DarkBrown4')
+url = "https://johndog.pl/wp-content/uploads/2021/11/pies-rasy-beagle.jpg"
+jpg_data = (cloudscraper.create_scraper(browser={"browser": "firefox", "platform": "windows", "mobile": False}).get(url).content)
+
+pil_image = Image.open(io.BytesIO(jpg_data))
+png_bio = io.BytesIO()
+pil_image.resize((500,300)).save(png_bio, format="PNG")
+png_data = png_bio.getvalue()
+
 layout = [  [sg.Text("Podaj liczbę paczek UwU")],
             [sg.Text('(づ๑•ᴗ•๑)づ♡')],
             [sg.Input()],
             [sg.Text('Podaj listę paczomatów')],
             [sg.Input()],
+            [sg.Column([[sg.Image(data=png_data, key="-ArtistAvatarIMG-")]])],
             [sg.Button('Ok'),sg.Button('Exit')] ]
 
 window = sg.Window('Window Title', layout)
-
-
 
 def losowa_sciezka(wymiar: int):
     """
@@ -134,9 +143,4 @@ while True:
         plt.plot(t, z4)
 
         plt.show()
-
-
-
-
-# Finish up by removing from the screen
 window.close()
