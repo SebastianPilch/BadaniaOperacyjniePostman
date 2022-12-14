@@ -53,6 +53,7 @@ def zysk_z_drogi(limit_czasu, path):
                 if i < len(path) - 2:
                     poprzedni = path[1 + i]
                     kolejny = path[2 + i]
+
                 # if czas_drogi <= limit_czasu:
                 # zysk_calkowity += edge.Paczkomat_in_.bilans()
     return czas_drogi
@@ -73,42 +74,45 @@ def UtworzMape(ListaAdresow):
                 Mapa.InsertEdges(j, i, r)
     return Mapa
 
-Kurier = PP.Kurier()
-names = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
-key_lst = [0]
-Paczkomat_lst = []
-for i in range(0, 10):
-    Paczkomat_lst.append(PP.Paczkomat(f'{names[i]}'))
+if __name__ == '__main__':
+    Kurier = PP.Kurier()
+    names = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+    key_lst = [0]
+    Paczkomat_lst = []
+    for i in range(len(names)):
+        Paczkomat_lst.append(PP.Paczkomat(f'{names[i]}'))
 
-Mapa = UtworzMape(Paczkomat_lst)
-print(Mapa)
+    Mapa = UtworzMape(Paczkomat_lst)
+    print(Mapa)
 
-pop = populacja_start(10)
-for i in range(len(pop)):
-    str_ = ''
-    for j in range(len(pop[i])):
-        if j < len(pop[i])-1:
-            str_ += " " + str(pop[i][j]) + " -> "
-        else:
-            str_ += " " + str(pop[i][j])
-    print(f"Osobnik {i + 1} : " + str_)
+    pop = populacja_start(len(names))
+    for i in range(len(pop)):
+        str_ = ''
+        for j in range(len(pop[i])):
+            if j < len(pop[i])-1:
+                str_ += " " + str(pop[i][j]) + " -> "
+            else:
+                str_ += " " + str(pop[i][j])
+        print(f"Osobnik {i + 1} : " + str_)
 
 
-print(zysk_z_drogi(30, pop[1]),'\n\n')
+    print(zysk_z_drogi(30, pop[1]),'\n\n')
 
-PP.random_paczka(Kurier, Paczkomat_lst, 20, Mapa)
-for i in Paczkomat_lst:
-    i.Print_zawartosc()
-print(Kurier)
+    PP.random_paczka(Kurier, Paczkomat_lst, 20, Mapa)
+    for i in Paczkomat_lst:
+        i.Print_zawartosc()
+    print(Kurier)
 
-t = [0 + i for i in range(0,600)]
-z1 = [PP.Funkcja_zysk_szybka(12,i) for i in t]
-z2 = [PP.Funkcja_zysk_priorytet(12,i) for i in t]
-z3 = [PP.Funkcja_zysk_Normalna(12,i) for i in t]
-z4 = [PP.Funkcja_zysk_Dlugi_czas(12,i) for i in t]
-plt.plot(t, z1)
-plt.plot(t, z2)
-plt.plot(t, z3)
-plt.plot(t, z4)
+    t = [0 + i for i in range(0,600)]
+    z1 = [PP.Funkcja_zysk_szybka(12,i) for i in t]
+    z2 = [PP.Funkcja_zysk_priorytet(12,i) for i in t]
+    z3 = [PP.Funkcja_zysk_Normalna(12,i) for i in t]
+    z4 = [PP.Funkcja_zysk_Dlugi_czas(12,i) for i in t]
+    plt.plot(t, z1)
+    plt.plot(t, z2)
+    plt.plot(t, z3)
+    plt.plot(t, z4)
 
-plt.show()
+    plt.show()
+
+
