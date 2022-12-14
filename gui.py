@@ -90,7 +90,7 @@ def UtworzMape(ListaAdresow):
 while True:
     if __name__ == '__main__':
         event, values = window.read()
-        if event == sg.WINDOW_CLOSED or event == 'Quit':
+        if event == sg.WINDOW_CLOSED or event == 'Exit':
             break
         l_paczek = int(values[0])
         Kurier = PP.Kurier()
