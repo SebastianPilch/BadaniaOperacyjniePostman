@@ -3,9 +3,9 @@ import Graf
 import Paczka_Paczkomat as PP
 from matplotlib import pyplot as plt
 import PySimpleGUI as sg
+import Krzyzowanie as Krz# Part 1 - The import
 
-
-sg.theme('SandyBeach')
+# Define the window's contents
 layout = [  [sg.Text("Podaj liczbę paczek UwU")],
             [sg.Text('(づ๑•ᴗ•๑)づ♡')],
             [sg.Input()],

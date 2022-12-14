@@ -1,14 +1,15 @@
 import random
 import Graf
 import Paczka_Paczkomat as PP
+import Krzyzowanie as Krz
 from matplotlib import pyplot as plt
+
 
 def losowa_sciezka(wymiar: int):
     """
     losowanie ścieżki generowane
     losowo odwiedzające każdy paczkomat
     w grafie
-
     """
     indexes = [i for i in range(wymiar)]
     wybrane = 0
@@ -37,15 +38,13 @@ def zysk_z_drogi(limit_czasu, path):
     """
     funkcja obliczająca zysk wygenerowny przez ścieżkę
     funkcja jakości
-
     """
     czas_drogi = 0
     poprzedni = path[0]
     kolejny = path[1]
-    # zysk_calkowity = poprzedni.bilans()
+    zysk_calkowity = poprzedni.bilans(0)
 
     for i in range(len(path) - 1):
-
         for edge in Mapa.Dict_[poprzedni]:
             if edge.Paczkomat_in_ == kolejny and edge.Paczkomat_out_ == poprzedni:
                 print(edge)
@@ -53,10 +52,16 @@ def zysk_z_drogi(limit_czasu, path):
                 if i < len(path) - 2:
                     poprzedni = path[1 + i]
                     kolejny = path[2 + i]
+                if czas_drogi <= limit_czasu:
+                    zysk_calkowity += edge.Paczkomat_in_.bilans(czas_drogi)
+    return zysk_calkowity
 
-                # if czas_drogi <= limit_czasu:
-                # zysk_calkowity += edge.Paczkomat_in_.bilans()
-    return czas_drogi
+
+def funkcja_fit(wartosc_f_celu):
+    if wartosc_f_celu >= 0:
+        return 1/(1+wartosc_f_celu)
+    else:
+        return 1 + abs(wartosc_f_celu)
 
 
 def UtworzMape(ListaAdresow):
@@ -74,9 +79,20 @@ def UtworzMape(ListaAdresow):
                 Mapa.InsertEdges(j, i, r)
     return Mapa
 
+
+def PrintPath(path):
+        str_ = ''
+        for i in range(len(path)):
+            if i < len(path) - 1:
+                str_ += " " + str(path[i]) + " -> "
+            else:
+                str_ += " " + str(path[i])
+        print(str_)
+
+
 if __name__ == '__main__':
     Kurier = PP.Kurier()
-    names = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+    names = ['A', 'B', 'C', 'D', 'E']
     key_lst = [0]
     Paczkomat_lst = []
     for i in range(len(names)):
@@ -94,25 +110,13 @@ if __name__ == '__main__':
             else:
                 str_ += " " + str(pop[i][j])
         print(f"Osobnik {i + 1} : " + str_)
-
-
-    print(zysk_z_drogi(30, pop[1]),'\n\n')
-
-    PP.random_paczka(Kurier, Paczkomat_lst, 20, Mapa)
+    PP.random_paczka(Kurier, Paczkomat_lst, 10, Mapa)
+    print('\n\n', zysk_z_drogi(30, pop[1]), '\n\n')
     for i in Paczkomat_lst:
         i.Print_zawartosc()
     print(Kurier)
 
-    t = [0 + i for i in range(0,600)]
-    z1 = [PP.Funkcja_zysk_szybka(12,i) for i in t]
-    z2 = [PP.Funkcja_zysk_priorytet(12,i) for i in t]
-    z3 = [PP.Funkcja_zysk_Normalna(12,i) for i in t]
-    z4 = [PP.Funkcja_zysk_Dlugi_czas(12,i) for i in t]
-    plt.plot(t, z1)
-    plt.plot(t, z2)
-    plt.plot(t, z3)
-    plt.plot(t, z4)
 
-    plt.show()
+
 
 

@@ -92,6 +92,8 @@ class Paczkomat:
         self.lista_dostarczenie = []
 
     def __eq__(self, other):
+        if other is None:
+            return False
         return True if self.key_ == other.key_ else False
 
     def __hash__(self):
@@ -123,9 +125,9 @@ class Paczkomat:
     def zysk(self, time):
         suma_zysk = 0
         for i in range(self.odbior_size()):
-            suma_zysk += self.lista_odbior[i].zysk(time)
+            suma_zysk += self.lista_odbior[i].zysk()
         for i in range(self.dostarczenie_size()):
-            suma_zysk += self.lista_dostarczenie[i].zysk(time)
+            suma_zysk += self.lista_dostarczenie[i].zysk()
         return suma_zysk
 
     def strata(self, time):
