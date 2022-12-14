@@ -2,9 +2,10 @@ import random
 import Graf
 import Paczka_Paczkomat as PP
 from matplotlib import pyplot as plt
-import PySimpleGUI as sg                        # Part 1 - The import
+import PySimpleGUI as sg
 
-# Define the window's contents
+
+sg.theme('SandyBeach')
 layout = [  [sg.Text("Podaj liczbę paczek UwU")],
             [sg.Text('(づ๑•ᴗ•๑)づ♡')],
             [sg.Input()],
