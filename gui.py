@@ -6,14 +6,14 @@ import PySimpleGUI as sg
 import io
 from PIL import Image
 import cloudscraper
-
+import str_url
 sg.theme('DarkBrown4')
-url = "https://johndog.pl/wp-content/uploads/2021/11/pies-rasy-beagle.jpg"
+url = str_url.img_start
 jpg_data = (cloudscraper.create_scraper(browser={"browser": "firefox", "platform": "windows", "mobile": False}).get(url).content)
 
 pil_image = Image.open(io.BytesIO(jpg_data))
 png_bio = io.BytesIO()
-pil_image.resize((500,300)).save(png_bio, format="PNG")
+pil_image.resize((400,500)).save(png_bio, format="PNG")
 png_data = png_bio.getvalue()
 
 layout = [  [sg.Text("Podaj liczbę paczek UwU")],
