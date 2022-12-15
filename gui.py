@@ -4,28 +4,26 @@ import Paczka_Paczkomat as PP
 from matplotlib import pyplot as plt
 import PySimpleGUI as sg
 import io
-from PIL import Image
-import cloudscraper
-import str_url
-sg.theme('DarkBrown4')
-url = str_url.img_start
-jpg_data = (cloudscraper.create_scraper(browser={"browser": "firefox", "platform": "windows", "mobile": False}).get(url).content)
+import os
+from PIL import Image,ImageTk
 
-pil_image = Image.open(io.BytesIO(jpg_data))
-png_bio = io.BytesIO()
-pil_image.resize((400,500)).save(png_bio, format="PNG")
-png_data = png_bio.getvalue()
+sg.theme('DarkBrown4')
+im = Image.open("img/kurier.png")
+size = (320, 400)
+im = im.resize(size, resample=Image.BICUBIC)
+im.save(r'img/kurier.png')
 
 layout = [  [sg.Text("Podaj liczbę paczek UwU")],
             [sg.Text('(づ๑•ᴗ•๑)づ♡')],
             [sg.Input()],
             [sg.Text('Podaj listę paczomatów')],
             [sg.Input()],
-            [sg.Column([[sg.Image(data=png_data, key="-ArtistAvatarIMG-")]])],
+            [sg.Image(size=size, key='-IMAGE-')],
             [sg.Button('Ok'),sg.Button('Exit')] ]
 
-window = sg.Window('Window Title', layout)
-
+window = sg.Window('Window Title', layout,margins=(0, 0), finalize=True)
+image = ImageTk.PhotoImage(image=im)
+window['-IMAGE-'].update(data=image)
 def losowa_sciezka(wymiar: int):
     """
     losowanie ścieżki generowane
