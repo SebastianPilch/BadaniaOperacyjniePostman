@@ -165,12 +165,11 @@ class Kurier:
     def InsertPaczka(self, Paczka):
         self.Paczki.append(Paczka)
 
-    def Dostarczenie(self, Paczkomat):
-        d = 0
+    def Dostarczenie(self, Paczkomat, czas):
+        zysk_dostarczenie = 0
         for i in range(len(self.Paczki)):
-            if Paczkomat.key_ == self.Paczki[i-d].adres_dostarczenia:
-                Paczkomat.InsertPaczka(self.Paczki[i - d])
-                del self.Paczki[i-d]
-                d += 1
+            if Paczkomat == self.Paczki[i].adres_dostarczenia:
+                zysk_dostarczenie += self.Paczki[i].bilans(aktualny_czas=czas)
+        return zysk_dostarczenie
 
 

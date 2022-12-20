@@ -5,14 +5,15 @@ import Graf
 import Paczka_Paczkomat as PP
 import Krzyzowanie as Krz
 from matplotlib import pyplot as plt
+import ABC_step_1 as ABC
 
-
-def losowa_sciezka(wymiar: int):
+def losowa_sciezka(graph:Graf.MapaPolaczen):
     """
     losowanie ścieżki generowane
     losowo odwiedzające każdy paczkomat
     w grafie
     """
+    wymiar = graph.order()
     indexes = [i for i in range(wymiar)]
     wybrane = 0
     path = []
@@ -21,7 +22,7 @@ def losowa_sciezka(wymiar: int):
         if idx not in path:
             path.append(idx)
     for i in range(len(path)):
-        path[i] = Mapa.getPaczkomat(path[i])
+        path[i] = graph.getPaczkomat(path[i])
     return path
 
 
@@ -32,20 +33,11 @@ def populacja_start(liczebnosc: int):
     """
     populacja = []
     for i in range(liczebnosc):
-        populacja.append(losowa_sciezka(Mapa.order()))
+        populacja.append(losowa_sciezka(Mapa))
     return populacja
 
 
 def zysk_z_drogi(limit_czasu, path):
-    """
-    funkcja obliczająca zysk wygenerowny przez ścieżkę
-    funkcja jakości
-    """
-    czas_drogi = 0
-    poprzedni = path[0]
-    kolejny = path[1]
-
-    def zysk_z_drogi(limit_czasu, path):
         """
         funkcja obliczająca zysk wygenerowny przez ścieżkę
         funkcja jakości
@@ -53,12 +45,12 @@ def zysk_z_drogi(limit_czasu, path):
         czas_drogi = 0
         poprzedni = path[0]
         kolejny = path[1]
-        Kurier.Dostarczenie(poprzedni)
         zysk_calkowity = poprzedni.bilans(0)
+        zysk_calkowity += Kurier.Dostarczenie(poprzedni, 0)
         for i in range(len(path) - 1):
             for edge in Mapa.Dict_[poprzedni]:
                 if edge.Paczkomat_in_ == kolejny and edge.Paczkomat_out_ == poprzedni:
-                    Kurier.Dostarczenie(edge.Paczkomat_in_)
+                    zysk_calkowity+= Kurier.Dostarczenie(edge.Paczkomat_in_,czas_drogi)
                     czas_drogi += edge.time_
                     if i < len(path) - 2:
                         poprzedni = path[1 + i]
@@ -115,7 +107,7 @@ def PrintAktualnyStan(kurir:PP.Kurier,Paczkomaty: List[PP.Paczkomat]):
 
 if __name__ == '__main__':
     Kurier = PP.Kurier()
-    names = ['A', 'B', 'C', 'D', 'E']
+    names = ['A', 'B', 'C', 'D', 'E','F','G','H',"I"]
     key_lst = [0]
     Paczkomat_lst = []
     for i in range(len(names)):
@@ -126,11 +118,14 @@ if __name__ == '__main__':
     pop = populacja_start(len(names))
     PrintPopulacja(pop)
 
-    PP.random_paczka(Kurier, Paczkomat_lst, 10, Mapa)
+    PP.random_paczka(Kurier, Paczkomat_lst, 24, Mapa)
     print('\n\n', zysk_z_drogi(100, pop[1]), '\n\n')
     PrintAktualnyStan(Kurier, Paczkomat_lst)
 
-
-
-
+    best_sol = ABC.Algorytm_ABC(pop, zysk_z_drogi, funkcja_fit, 600, 3, 100, Mapa)
+    idx = [i for i in range(len(best_sol[0]))]
+    plt.plot(idx, best_sol[0])
+    plt.scatter(best_sol[1][2],best_sol[1][1])
+    plt.show()
+    print(best_sol[1][0])
 
