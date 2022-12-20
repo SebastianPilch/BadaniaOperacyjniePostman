@@ -1,4 +1,6 @@
 import random
+from typing import List
+
 import Graf
 import Paczka_Paczkomat as PP
 import Krzyzowanie as Krz
@@ -98,15 +100,18 @@ def PrintPath(path):
                 str_ += " " + str(path[i])
         print(str_)
 
+
 def PrintPopulacja(pop):
-    for i in range(len(pop)):
-        str_ = ''
-        for j in range(len(pop[i])):
-            if j < len(pop[i])-1:
-                str_ += " " + str(pop[i][j]) + " -> "
-            else:
-                str_ += " " + str(pop[i][j])
-        print(f"Osobnik {i + 1} : " + str_)
+    for path in pop:
+        PrintPath(path)
+
+
+def PrintAktualnyStan(kurir:PP.Kurier,Paczkomaty: List[PP.Paczkomat]):
+    for i in Paczkomat_lst:
+        i.Print_zawartosc()
+    print(Kurier)
+
+
 
 if __name__ == '__main__':
     Kurier = PP.Kurier()
@@ -118,17 +123,12 @@ if __name__ == '__main__':
 
     Mapa = UtworzMape(Paczkomat_lst)
     print(Mapa)
-
     pop = populacja_start(len(names))
-
-
-
+    PrintPopulacja(pop)
 
     PP.random_paczka(Kurier, Paczkomat_lst, 10, Mapa)
     print('\n\n', zysk_z_drogi(100, pop[1]), '\n\n')
-    for i in Paczkomat_lst:
-        i.Print_zawartosc()
-    print(Kurier)
+    PrintAktualnyStan(Kurier, Paczkomat_lst)
 
 
 
