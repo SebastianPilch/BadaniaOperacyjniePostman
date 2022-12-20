@@ -111,7 +111,7 @@ if __name__ == '__main__':
                 str_ += " " + str(pop[i][j])
         print(f"Osobnik {i + 1} : " + str_)
     PP.random_paczka(Kurier, Paczkomat_lst, 10, Mapa)
-    print('\n\n', zysk_z_drogi(30, pop[1]), '\n\n')
+    print('\n\n', zysk_z_drogi(100, pop[1]), '\n\n')
     for i in Paczkomat_lst:
         i.Print_zawartosc()
     print(Kurier)

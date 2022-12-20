@@ -63,10 +63,9 @@ def zysk_z_drogi(limit_czasu, path):
     czas_drogi = 0
     poprzedni = path[0]
     kolejny = path[1]
-    # zysk_calkowity = poprzedni.bilans()
+    zysk_calkowity = poprzedni.bilans(0)
 
     for i in range(len(path) - 1):
-
         for edge in Mapa.Dict_[poprzedni]:
             if edge.Paczkomat_in_ == kolejny and edge.Paczkomat_out_ == poprzedni:
                 print(edge)
@@ -74,10 +73,10 @@ def zysk_z_drogi(limit_czasu, path):
                 if i < len(path) - 2:
                     poprzedni = path[1 + i]
                     kolejny = path[2 + i]
+                if czas_drogi <= limit_czasu:
+                    zysk_calkowity += edge.Paczkomat_in_.bilans(czas_drogi)
+    return zysk_calkowity
 
-                # if czas_drogi <= limit_czasu:
-                # zysk_calkowity += edge.Paczkomat_in_.bilans()
-    return czas_drogi
 
 
 def UtworzMape(ListaAdresow):
@@ -122,14 +121,11 @@ while True:
                     str_ += " " + str(pop[i][j])
             print(f"Osobnik {i + 1} : " + str_)
 
-
-        print(zysk_z_drogi(30, pop[1]),'\n\n')
-
         PP.random_paczka(Kurier, Paczkomat_lst, l_paczek, Mapa)
         for i in Paczkomat_lst:
             i.Print_zawartosc()
         print(Kurier)
-
+        print(zysk_z_drogi(30, pop[1]),'\n\n')
         t = [0 + i for i in range(0,600)]
         z1 = [PP.Funkcja_zysk_szybka(12,i) for i in t]
         z2 = [PP.Funkcja_zysk_priorytet(12,i) for i in t]
