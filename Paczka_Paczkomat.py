@@ -23,7 +23,7 @@ def Funkcja_zysk_Dlugi_czas(start_val,czas):
 
 
 class Paczka:
-    def __init__(self,wartosc_poczatkowa, typ ,key, adres_dostarczenia, czas: float,dostarczenie: bool):
+    def __init__(self, wartosc_poczatkowa, typ, key, adres_dostarczenia,dostarczenie: bool):
         self.key = key
         self.adres_dostarczenia = adres_dostarczenia
         self.dostarczenie = dostarczenie
@@ -59,7 +59,10 @@ class Paczka:
         if self.typ == 4:
             t_ = "Priorytetowa"
 
-        return "[" + str(self.key) +',' +str(self.adres_dostarczenia) + "," + t_ + "]"
+        if self.dostarczenie:
+            return "[" + str(self.key) +',' +str(self.adres_dostarczenia) + "," + t_ + "]"
+        else:
+            return "[" + str(self.key) + ",Odbiór ," + t_ + "]"
 
 
 def random_paczka(Kurier, Pacz_lst, liczba_iter, map: Graf.MapaPolaczen, key_Pacz_list: List[int] = [0]):
@@ -76,11 +79,11 @@ def random_paczka(Kurier, Pacz_lst, liczba_iter, map: Graf.MapaPolaczen, key_Pac
         typ = random.randint(1, 4)
         if key % 2 == 0:
             dostarczenie = True
-            paczka_dod = Paczka(wartosc, typ, key, 'Kurier', adres_dos, dostarczenie)
+            paczka_dod = Paczka(wartosc, typ, key, adres_dos, dostarczenie)
             Kurier.InsertPaczka(paczka_dod)
         else:
             dostarczenie = False
-            paczka_dod = Paczka(wartosc, typ, key, adres_akt, adres_dos, dostarczenie)
+            paczka_dod = Paczka(wartosc, typ, key, adres_dos, dostarczenie)
             index = map.getPaczkomatIdx(adres_akt)
             paczko: Paczkomat = map.getPaczkomat(index)
             paczko.InsertPaczka(paczka_dod)

@@ -42,19 +42,28 @@ def zysk_z_drogi(limit_czasu, path):
     czas_drogi = 0
     poprzedni = path[0]
     kolejny = path[1]
-    zysk_calkowity = poprzedni.bilans(0)
 
-    for i in range(len(path) - 1):
-        for edge in Mapa.Dict_[poprzedni]:
-            if edge.Paczkomat_in_ == kolejny and edge.Paczkomat_out_ == poprzedni:
-                print(edge)
-                czas_drogi += edge.time_
-                if i < len(path) - 2:
-                    poprzedni = path[1 + i]
-                    kolejny = path[2 + i]
-                if czas_drogi <= limit_czasu:
-                    zysk_calkowity += edge.Paczkomat_in_.bilans(czas_drogi)
-    return zysk_calkowity
+    def zysk_z_drogi(limit_czasu, path):
+        """
+        funkcja obliczająca zysk wygenerowny przez ścieżkę
+        funkcja jakości
+        """
+        czas_drogi = 0
+        poprzedni = path[0]
+        kolejny = path[1]
+        Kurier.Dostarczenie(poprzedni)
+        zysk_calkowity = poprzedni.bilans(0)
+        for i in range(len(path) - 1):
+            for edge in Mapa.Dict_[poprzedni]:
+                if edge.Paczkomat_in_ == kolejny and edge.Paczkomat_out_ == poprzedni:
+                    Kurier.Dostarczenie(edge.Paczkomat_in_)
+                    czas_drogi += edge.time_
+                    if i < len(path) - 2:
+                        poprzedni = path[1 + i]
+                        kolejny = path[2 + i]
+                    if czas_drogi <= limit_czasu:
+                        zysk_calkowity += edge.Paczkomat_in_.bilans(czas_drogi)
+        return zysk_calkowity
 
 
 def funkcja_fit(wartosc_f_celu):
@@ -89,6 +98,15 @@ def PrintPath(path):
                 str_ += " " + str(path[i])
         print(str_)
 
+def PrintPopulacja(pop):
+    for i in range(len(pop)):
+        str_ = ''
+        for j in range(len(pop[i])):
+            if j < len(pop[i])-1:
+                str_ += " " + str(pop[i][j]) + " -> "
+            else:
+                str_ += " " + str(pop[i][j])
+        print(f"Osobnik {i + 1} : " + str_)
 
 if __name__ == '__main__':
     Kurier = PP.Kurier()
@@ -102,14 +120,10 @@ if __name__ == '__main__':
     print(Mapa)
 
     pop = populacja_start(len(names))
-    for i in range(len(pop)):
-        str_ = ''
-        for j in range(len(pop[i])):
-            if j < len(pop[i])-1:
-                str_ += " " + str(pop[i][j]) + " -> "
-            else:
-                str_ += " " + str(pop[i][j])
-        print(f"Osobnik {i + 1} : " + str_)
+
+
+
+
     PP.random_paczka(Kurier, Paczkomat_lst, 10, Mapa)
     print('\n\n', zysk_z_drogi(100, pop[1]), '\n\n')
     for i in Paczkomat_lst:

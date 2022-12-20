@@ -58,17 +58,16 @@ def zysk_z_drogi(limit_czasu, path):
     """
     funkcja obliczająca zysk wygenerowny przez ścieżkę
     funkcja jakości
-
     """
     czas_drogi = 0
     poprzedni = path[0]
     kolejny = path[1]
+    Kurier.Dostarczenie(poprzedni)
     zysk_calkowity = poprzedni.bilans(0)
-
     for i in range(len(path) - 1):
         for edge in Mapa.Dict_[poprzedni]:
             if edge.Paczkomat_in_ == kolejny and edge.Paczkomat_out_ == poprzedni:
-                print(edge)
+                Kurier.Dostarczenie(edge.Paczkomat_in_)
                 czas_drogi += edge.time_
                 if i < len(path) - 2:
                     poprzedni = path[1 + i]
@@ -76,7 +75,6 @@ def zysk_z_drogi(limit_czasu, path):
                 if czas_drogi <= limit_czasu:
                     zysk_calkowity += edge.Paczkomat_in_.bilans(czas_drogi)
     return zysk_calkowity
-
 
 
 def UtworzMape(ListaAdresow):
@@ -126,15 +124,6 @@ while True:
             i.Print_zawartosc()
         print(Kurier)
         print(zysk_z_drogi(30, pop[1]),'\n\n')
-        t = [0 + i for i in range(0,600)]
-        z1 = [PP.Funkcja_zysk_szybka(12,i) for i in t]
-        z2 = [PP.Funkcja_zysk_priorytet(12,i) for i in t]
-        z3 = [PP.Funkcja_zysk_Normalna(12,i) for i in t]
-        z4 = [PP.Funkcja_zysk_Dlugi_czas(12,i) for i in t]
-        plt.plot(t, z1)
-        plt.plot(t, z2)
-        plt.plot(t, z3)
-        plt.plot(t, z4)
 
         plt.show()
 window.close()
