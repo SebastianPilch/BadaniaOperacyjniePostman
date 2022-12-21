@@ -77,7 +77,7 @@ def Scout_bee(original_food_source, f_celu, fit, Maximize, Minimize, trial, time
     food_source = dp(original_food_source)
     for bee_idx, bee in enumerate(food_source):
         if trial[bee_idx] > scout_limit and bee_idx != max_idx:
-            new_solution = main.losowa_sciezka(Graf)
+            new_solution = Krz.losowa_sciezka(Graf)
             food_source[bee_idx] = new_solution
             new_max = f_celu(time_limit, new_solution)
             Maximize[bee_idx] = new_max

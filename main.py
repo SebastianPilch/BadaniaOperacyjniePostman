@@ -7,8 +7,6 @@ import Krzyzowanie as Krz
 from matplotlib import pyplot as plt
 import ABC_step_1 as ABC
 
-
-
 def zysk_z_drogi(limit_czasu, path):
         """
         funkcja obliczająca zysk wygenerowny przez ścieżkę
@@ -31,21 +29,21 @@ def zysk_z_drogi(limit_czasu, path):
                         zysk_calkowity += edge.Paczkomat_in_.bilans(czas_drogi)
         return zysk_calkowity
 
+
 if __name__ == '__main__':
     Kurier = PP.Kurier()
-    names = ['A', 'B', 'C', 'D', 'E','F', 'G', 'H', "I"]
+    names = [chr(ord('A')+ i) for i in range(24)]
     key_lst = [0]
     Paczkomat_lst = []
     for i in range(len(names)):
         Paczkomat_lst.append(PP.Paczkomat(f'{names[i]}'))
 
-    Mapa = Graf.UtworzMape(Paczkomat_lst)
+    Mapa = Graf.UtworzMape(Paczkomat_lst, 9, 60)
     print(Mapa)
-    pop = populacja_start(len(names))
+    pop = Krz.populacja_start(len(names), Mapa)
     Krz.PrintPopulacja(pop)
 
     PP.random_paczka(Kurier, Paczkomat_lst, 100, Mapa)
-    print('\n\n', zysk_z_drogi(100, pop[1]), '\n\n')
     Krz.PrintAktualnyStan(Kurier, Paczkomat_lst)
 
     best_sol = ABC.Algorytm_ABC(pop, zysk_z_drogi, ABC.funkcja_fit, 600, 3, 100, Mapa)

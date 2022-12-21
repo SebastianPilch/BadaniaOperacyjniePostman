@@ -26,7 +26,7 @@ layout = [[sg.Text("Podaj liczbę paczek UwU")],
           [sg.Image(size=size, key='-IMAGE-')],
           [sg.Button('Ok'),sg.Button('Exit')]]
 
-window = sg.Window('Window Title', layout,margins=(0, 0), finalize=True)
+window = sg.Window('Window Title', layout, margins=(0, 0), finalize=True)
 image = ImageTk.PhotoImage(image=im)
 window['-IMAGE-'].update(data=image)
 def losowa_sciezka(wymiar: int):
