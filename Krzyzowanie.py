@@ -39,7 +39,7 @@ def losowa_sciezka(Mapa:Graf.MapaPolaczen):
     indexes = [i for i in range(wymiar)]
     path = []
     while len(indexes) > len(path):
-        idx = random.randint(0, wymiar - 1)
+        idx = randint(0, wymiar - 1)
         if idx not in path:
             path.append(idx)
     for i in range(len(path)):
