@@ -43,10 +43,10 @@ if __name__ == '__main__':
     pop = Krz.populacja_start(len(names), Mapa)
     Krz.PrintPopulacja(pop)
 
-    PP.random_paczka(Kurier, Paczkomat_lst, 100, Mapa)
+    PP.random_paczka(Kurier, Paczkomat_lst, 170, Mapa)
     Krz.PrintAktualnyStan(Kurier, Paczkomat_lst)
 
-    best_sol = ABC.Algorytm_ABC(pop, zysk_z_drogi, ABC.funkcja_fit, 600, 3, 100, Mapa)
+    best_sol = ABC.Algorytm_ABC(pop, zysk_z_drogi, ABC.funkcja_fit, 600, 3, 1000, Mapa)
     idx = [i for i in range(len(best_sol[0]))]
     plt.plot(idx, best_sol[0])
     plt.scatter(best_sol[1][2], best_sol[1][1])
