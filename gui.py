@@ -2,6 +2,7 @@ import random
 import Graf
 import Paczka_Paczkomat as PP
 from matplotlib import pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import PySimpleGUI as sg
 import Krzyzowanie as Krz
 import io
@@ -35,16 +36,34 @@ layout_lst = [[sg.Text("Podaj liczbę paczek UwU")],
 layout_img= [
             [sg.Image(size=size, key='-IMAGE-')]]
 
+
+layout_plot = [
+    [sg.Canvas(key="-CANVAS-",size=(500,500))]
+]
 layout=[
     [
         sg.Column(layout_img),
         sg.VSeparator(),
-        sg.Column(layout_lst)
+        sg.Column(layout_lst),
+        sg.VSeparator(),
+        sg.Column(layout_plot),
     ]
 ]
 window = sg.Window('Window Title', layout,margins=(0, 0), finalize=True)
 image = ImageTk.PhotoImage(image=im)
 window['-IMAGE-'].update(data=image)
+
+def creat_plot(x,y):
+    plt.plot(x,y)
+    plt.grid('on')
+    return plt.gcf()
+
+def draw_figure(canvas,figure):
+    figure_can = FigureCanvasTkAgg(figure,canvas)
+    figure_can.draw()
+    figure_can.get_tk_widget().pack(side='top',fill='both',expand=1)
+    return figure_can
+
 def losowa_sciezka(wymiar: int):
     """
     losowanie ścieżki generowane
@@ -130,15 +149,16 @@ while True:
         PP.random_paczka(Kurier, Paczkomat_lst, 170, Mapa)
         Krz.PrintAktualnyStan(Kurier, Paczkomat_lst)
 
-        for i in range(10):
+        for i in range(1):
             best_sol = ABC.Algorytm_ABC(pop, int(values['-INPUT_TIME-']), int(values['-INPUT_LIMIT_SCOUT-']), int(values['-INPUT_ITERACJE-']), Mapa, Kurier)
 
             print('\n\n\n\n\nWynik ', f'{i}:\n')
             idx = [i for i in range(len(best_sol[0]))]
-            plt.plot(idx, best_sol[0])
-            plt.scatter(best_sol[1][2], best_sol[1][1])
-            plt.show()
-            Krz.PrintPath(best_sol[1][0])
+            # plt.plot(idx, best_sol[0])
+            # plt.scatter(best_sol[1][2], best_sol[1][1])
+            # plt.show()
+            # Krz.PrintPath(best_sol[1][0])
+            draw_figure(window["-CANVAS-"].TKCanvas,creat_plot(idx,best_sol[0]))
             print(f'\nMaksymalny znaleziony zysk: ', best_sol[1][1])
 
 window.close()
