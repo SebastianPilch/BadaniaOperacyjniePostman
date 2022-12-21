@@ -134,7 +134,9 @@ class MapaPolaczen:
             for j in range(len(self.Dict_[i])):
                 lst.append(self.Dict_[i][j])
         return lst
-def UtworzMape(ListaAdresow):
+
+
+def UtworzMape(ListaAdresow, min_odleglosc, max_oleglosc):
     """ Utworzenie grafu """
     Mapa = MapaPolaczen()
     for i in ListaAdresow:
@@ -144,7 +146,7 @@ def UtworzMape(ListaAdresow):
         visited.append(i)
         for j in ListaAdresow:
             if i != j and j not in visited:
-                r = random.randint(9, 60)
+                r = random.randint(min_odleglosc, max_oleglosc)
                 Mapa.InsertEdges(i, j, r)
                 Mapa.InsertEdges(j, i, r)
     return Mapa

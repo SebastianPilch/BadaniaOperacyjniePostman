@@ -7,34 +7,6 @@ import Krzyzowanie as Krz
 from matplotlib import pyplot as plt
 import ABC_step_1 as ABC
 
-def losowa_sciezka(graph:Graf.MapaPolaczen):
-    """
-    losowanie ścieżki generowane
-    losowo odwiedzające każdy paczkomat
-    w grafie
-    """
-    wymiar = graph.order()
-    indexes = [i for i in range(wymiar)]
-    wybrane = 0
-    path = []
-    while len(indexes) > len(path):
-        idx = random.randint(0, wymiar - 1)
-        if idx not in path:
-            path.append(idx)
-    for i in range(len(path)):
-        path[i] = graph.getPaczkomat(path[i])
-    return path
-
-
-def populacja_start(liczebnosc: int):
-    """
-    wykorzystanie losowych ścieżek w celu złożenia
-    początkowej populacji o liczebności podanej z zewnątrz
-    """
-    populacja = []
-    for i in range(liczebnosc):
-        populacja.append(losowa_sciezka(Mapa))
-    return populacja
 
 
 def zysk_z_drogi(limit_czasu, path):
@@ -61,7 +33,7 @@ def zysk_z_drogi(limit_czasu, path):
 
 if __name__ == '__main__':
     Kurier = PP.Kurier()
-    names = ['A', 'B', 'C', 'D', 'E','F','G','H',"I"]
+    names = ['A', 'B', 'C', 'D', 'E','F', 'G', 'H', "I"]
     key_lst = [0]
     Paczkomat_lst = []
     for i in range(len(names)):

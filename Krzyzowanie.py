@@ -1,5 +1,8 @@
 import Paczka_Paczkomat as PP
 from typing import List
+import Graf
+import random
+
 
 """ Funkcję wypisujące populację oraz pojedynczego osobnika"""
 def PrintPath(path):
@@ -24,6 +27,35 @@ def PrintAktualnyStan(kurir: PP.Kurier, Paczkomaty: List[PP.Paczkomat]):
     for i in Paczkomaty:
         i.Print_zawartosc()
     print(PP.Kurier)
+
+
+def losowa_sciezka(graph:Graf.MapaPolaczen):
+    """
+    losowanie ścieżki generowane
+    losowo odwiedzające każdy paczkomat
+    w grafie
+    """
+    wymiar = graph.order()
+    indexes = [i for i in range(wymiar)]
+    path = []
+    while len(indexes) > len(path):
+        idx = random.randint(0, wymiar - 1)
+        if idx not in path:
+            path.append(idx)
+    for i in range(len(path)):
+        path[i] = graph.getPaczkomat(path[i])
+    return path
+
+
+def populacja_start(liczebnosc: int, Mapa: Graf.MapaPolaczen):
+    """
+    wykorzystanie losowych ścieżek w celu złożenia
+    początkowej populacji o liczebności podanej z zewnątrz
+    """
+    populacja = []
+    for i in range(liczebnosc):
+        populacja.append(losowa_sciezka(Mapa))
+    return populacja
 
 
 def Krzyzowanie(przodek_1: List[PP.Paczkomat], przodek_2: List[PP.Paczkomat]):

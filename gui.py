@@ -67,12 +67,12 @@ def zysk_z_drogi(limit_czasu, path):
     czas_drogi = 0
     poprzedni = path[0]
     kolejny = path[1]
-    Kurier.Dostarczenie(poprzedni)
+    Kurier.Dostarczenie(poprzedni,czas_drogi)
     zysk_calkowity = poprzedni.bilans(0)
     for i in range(len(path) - 1):
         for edge in Mapa.Dict_[poprzedni]:
             if edge.Paczkomat_in_ == kolejny and edge.Paczkomat_out_ == poprzedni:
-                Kurier.Dostarczenie(edge.Paczkomat_in_)
+                Kurier.Dostarczenie(edge.Paczkomat_in_,czas_drogi)
                 czas_drogi += edge.time_
                 if i < len(path) - 2:
                     poprzedni = path[1 + i]
@@ -94,7 +94,7 @@ while True:
         names = values[1].split(',')
         key_lst = [0]
         Paczkomat_lst = [PP.Paczkomat(f'{names[i]}') for i in range(len(names))]
-        Mapa = Graf.UtworzMape(Paczkomat_lst)
+        Mapa = Graf.UtworzMape(Paczkomat_lst, 9, 60)
         print(Mapa)
         pop = populacja_start(len(names))
         Krz.PrintPopulacja(pop)
