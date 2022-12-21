@@ -6,6 +6,11 @@ from copy import deepcopy as dp
 import Krzyzowanie as Krz
 import main
 
+def funkcja_fit(wartosc_f_celu):
+    if wartosc_f_celu >= 0:
+        return 1/(1+wartosc_f_celu)
+    else:
+        return 1 + abs(wartosc_f_celu)
 
 def EmployedBee(original_food_source, f_celu, fit, limit, Maximize, Minimize, trial):
     food_source = dp(original_food_source)
@@ -28,7 +33,7 @@ def EmployedBee(original_food_source, f_celu, fit, limit, Maximize, Minimize, tr
             Maximize[przodek1_idx] = potomek_max
             Minimize[przodek1_idx] = potomek_min
             trial[przodek1_idx] = 0
-        return food_source, Maximize, Minimize, trial
+    return food_source, Maximize, Minimize, trial
 
 
 def OnlookerdBee(original_food_source, f_celu, fit, Maximize, Minimize, trial, limit):
@@ -97,5 +102,5 @@ def Algorytm_ABC(original_food_source, f_celu, fit, time_limit, scout_limit, Max
         original_food_source, Maximize, Minimize, trial = Scout_bee(food_source_phaseOlB, f_celu, fit, Maximize_phase_OlB, Minimize_phase_OlB, trial_phase_OlB, time_limit, scout_limit, Graf, max_idx)
         #
         iter += 1
-        best_sol.append(max(Maximize))
+        best_sol.append(current_best[1])
     return best_sol, current_best

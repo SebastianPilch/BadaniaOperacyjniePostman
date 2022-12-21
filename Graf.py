@@ -1,3 +1,5 @@
+import random
+
 class Edge:
     def __init__(self, Paczkomat1, Paczkomat2, edge=1):
         self.Paczkomat_out_ = Paczkomat1
@@ -132,3 +134,17 @@ class MapaPolaczen:
             for j in range(len(self.Dict_[i])):
                 lst.append(self.Dict_[i][j])
         return lst
+def UtworzMape(ListaAdresow):
+    """ Utworzenie grafu """
+    Mapa = MapaPolaczen()
+    for i in ListaAdresow:
+        Mapa.InsertPaczkomat(i)
+    visited = []
+    for i in ListaAdresow:
+        visited.append(i)
+        for j in ListaAdresow:
+            if i != j and j not in visited:
+                r = random.randint(9, 60)
+                Mapa.InsertEdges(i, j, r)
+                Mapa.InsertEdges(j, i, r)
+    return Mapa

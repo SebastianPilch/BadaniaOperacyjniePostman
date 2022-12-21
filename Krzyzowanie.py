@@ -1,9 +1,33 @@
 import Paczka_Paczkomat as PP
 from typing import List
 
+""" Funkcję wypisujące populację oraz pojedynczego osobnika"""
+def PrintPath(path):
+    ''' Wypisanie pojedyńczego osobnika na konsolę'''
+    str_ = ''
+    for i in range(len(path)):
+        if i < len(path) - 1:
+            str_ += " " + str(path[i]) + " -> "
+        else:
+            str_ += " " + str(path[i])
+    print(str_)
+
+
+def PrintPopulacja(pop):
+    ''' Wypisanie populacji na konsolę'''
+    for path in pop:
+        PrintPath(path)
+
+
+def PrintAktualnyStan(kurir: PP.Kurier, Paczkomaty: List[PP.Paczkomat]):
+    ''' Wypisanie zwartości wszystkich paczkomatów i paczek u kuriera na konsolę'''
+    for i in Paczkomaty:
+        i.Print_zawartosc()
+    print(PP.Kurier)
+
 
 def Krzyzowanie(przodek_1: List[PP.Paczkomat], przodek_2: List[PP.Paczkomat]):
-
+    ''' Funkcja krzyżująca dwie podanie ścieżki'''
     potomek: List[PP.Paczkomat] = [None for j in przodek_1]
     for i in range(len(przodek_1)// 2):
         potomek[i] = przodek_1[i]

@@ -3,6 +3,7 @@ import Graf
 import Paczka_Paczkomat as PP
 from matplotlib import pyplot as plt
 import PySimpleGUI as sg
+import Krzyzowanie as Krz
 import io
 import os
 from PIL import Image,ImageTk
@@ -13,13 +14,17 @@ size = (320, 400)
 im = im.resize(size, resample=Image.BICUBIC)
 im.save(r'img/kurier.png')
 
-layout = [  [sg.Text("Podaj liczbę paczek UwU")],
-            [sg.Text('(づ๑•ᴗ•๑)づ♡')],
-            [sg.Input()],
-            [sg.Text('Podaj listę paczomatów')],
-            [sg.Input()],
-            [sg.Image(size=size, key='-IMAGE-')],
-            [sg.Button('Ok'),sg.Button('Exit')] ]
+layout = [[sg.Text("Podaj liczbę paczek UwU")],
+          [sg.Text('(づ๑•ᴗ•๑)づ♡')],
+          [sg.Input()],
+          [sg.Text('Podaj listę paczomatów')],
+          [sg.Input()],
+          [sg.Text('Liczba iteracji')],
+          [sg.Input()],
+          [sg.Text('Limit w fazie scout')],
+          [sg.Input()],
+          [sg.Image(size=size, key='-IMAGE-')],
+          [sg.Button('Ok'),sg.Button('Exit')]]
 
 window = sg.Window('Window Title', layout,margins=(0, 0), finalize=True)
 image = ImageTk.PhotoImage(image=im)
@@ -77,20 +82,7 @@ def zysk_z_drogi(limit_czasu, path):
     return zysk_calkowity
 
 
-def UtworzMape(ListaAdresow):
-    """ Utworzenie grafu """
-    Mapa = Graf.MapaPolaczen()
-    for i in ListaAdresow:
-        Mapa.InsertPaczkomat(i)
-    visited = []
-    for i in ListaAdresow:
-        visited.append(i)
-        for j in ListaAdresow:
-            if i != j and j not in visited:
-                r = random.randint(9, 60)
-                Mapa.InsertEdges(i, j, r)
-                Mapa.InsertEdges(j, i, r)
-    return Mapa
+
 
 while True:
     if __name__ == '__main__':
@@ -100,30 +92,16 @@ while True:
         l_paczek = int(values[0])
         Kurier = PP.Kurier()
         names = values[1].split(',')
-        print(names)
         key_lst = [0]
-        Paczkomat_lst = []
-        for i in range(len(names)):
-            Paczkomat_lst.append(PP.Paczkomat(f'{names[i]}'))
-
-        Mapa = UtworzMape(Paczkomat_lst)
+        Paczkomat_lst = [PP.Paczkomat(f'{names[i]}') for i in range(len(names))]
+        Mapa = Graf.UtworzMape(Paczkomat_lst)
         print(Mapa)
-
         pop = populacja_start(len(names))
-        for i in range(len(pop)):
-            str_ = ''
-            for j in range(len(pop[i])):
-                if j < len(pop[i])-1:
-                    str_ += " " + str(pop[i][j]) + " -> "
-                else:
-                    str_ += " " + str(pop[i][j])
-            print(f"Osobnik {i + 1} : " + str_)
-
+        Krz.PrintPopulacja(pop)
         PP.random_paczka(Kurier, Paczkomat_lst, l_paczek, Mapa)
         for i in Paczkomat_lst:
             i.Print_zawartosc()
         print(Kurier)
-        print(zysk_z_drogi(30, pop[1]),'\n\n')
 
-        plt.show()
+
 window.close()

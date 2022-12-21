@@ -59,52 +59,6 @@ def zysk_z_drogi(limit_czasu, path):
                         zysk_calkowity += edge.Paczkomat_in_.bilans(czas_drogi)
         return zysk_calkowity
 
-
-def funkcja_fit(wartosc_f_celu):
-    if wartosc_f_celu >= 0:
-        return 1/(1+wartosc_f_celu)
-    else:
-        return 1 + abs(wartosc_f_celu)
-
-
-def UtworzMape(ListaAdresow):
-    """ Utworzenie grafu """
-    Mapa = Graf.MapaPolaczen()
-    for i in ListaAdresow:
-        Mapa.InsertPaczkomat(i)
-    visited = []
-    for i in ListaAdresow:
-        visited.append(i)
-        for j in ListaAdresow:
-            if i != j and j not in visited:
-                r = random.randint(9, 60)
-                Mapa.InsertEdges(i, j, r)
-                Mapa.InsertEdges(j, i, r)
-    return Mapa
-
-
-def PrintPath(path):
-        str_ = ''
-        for i in range(len(path)):
-            if i < len(path) - 1:
-                str_ += " " + str(path[i]) + " -> "
-            else:
-                str_ += " " + str(path[i])
-        print(str_)
-
-
-def PrintPopulacja(pop):
-    for path in pop:
-        PrintPath(path)
-
-
-def PrintAktualnyStan(kurir:PP.Kurier,Paczkomaty: List[PP.Paczkomat]):
-    for i in Paczkomat_lst:
-        i.Print_zawartosc()
-    print(Kurier)
-
-
-
 if __name__ == '__main__':
     Kurier = PP.Kurier()
     names = ['A', 'B', 'C', 'D', 'E','F','G','H',"I"]
@@ -113,19 +67,19 @@ if __name__ == '__main__':
     for i in range(len(names)):
         Paczkomat_lst.append(PP.Paczkomat(f'{names[i]}'))
 
-    Mapa = UtworzMape(Paczkomat_lst)
+    Mapa = Graf.UtworzMape(Paczkomat_lst)
     print(Mapa)
     pop = populacja_start(len(names))
-    PrintPopulacja(pop)
+    Krz.PrintPopulacja(pop)
 
-    PP.random_paczka(Kurier, Paczkomat_lst, 24, Mapa)
+    PP.random_paczka(Kurier, Paczkomat_lst, 100, Mapa)
     print('\n\n', zysk_z_drogi(100, pop[1]), '\n\n')
-    PrintAktualnyStan(Kurier, Paczkomat_lst)
+    Krz.PrintAktualnyStan(Kurier, Paczkomat_lst)
 
-    best_sol = ABC.Algorytm_ABC(pop, zysk_z_drogi, funkcja_fit, 600, 3, 100, Mapa)
+    best_sol = ABC.Algorytm_ABC(pop, zysk_z_drogi, ABC.funkcja_fit, 600, 3, 100, Mapa)
     idx = [i for i in range(len(best_sol[0]))]
     plt.plot(idx, best_sol[0])
-    plt.scatter(best_sol[1][2],best_sol[1][1])
+    plt.scatter(best_sol[1][2], best_sol[1][1])
     plt.show()
     print(best_sol[1][0])
 

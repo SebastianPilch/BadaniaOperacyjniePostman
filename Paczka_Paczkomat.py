@@ -5,7 +5,7 @@ import copy
 import math
 from enum import Enum
 
-
+"""Funkcje bilansu zysku paczek"""
 def Funkcja_zysk_szybka(start_val,czas):
     return start_val * math.exp(-czas/275)
 
@@ -66,7 +66,7 @@ class Paczka:
 
 
 def random_paczka(Kurier, Pacz_lst, liczba_iter, map: Graf.MapaPolaczen, key_Pacz_list: List[int] = [0]):
-
+    '''Generowanie początkowego położenia paczek oraz ich typu'''
     for i in range(liczba_iter):
         Pacz_list = copy.copy(Pacz_lst)
         key = max(key_Pacz_list) + 1
