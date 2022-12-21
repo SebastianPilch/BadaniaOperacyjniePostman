@@ -22,11 +22,11 @@ def PrintPopulacja(pop):
         PrintPath(path)
 
 
-def PrintAktualnyStan(kurir: PP.Kurier, Paczkomaty: List[PP.Paczkomat]):
+def PrintAktualnyStan(kurier: PP.Kurier, Paczkomaty: List[PP.Paczkomat]):
     ''' Wypisanie zwartości wszystkich paczkomatów i paczek u kuriera na konsolę'''
     for i in Paczkomaty:
         i.Print_zawartosc()
-    print(PP.Kurier)
+    print(kurier)
 
 
 def losowa_sciezka(Mapa:Graf.MapaPolaczen):

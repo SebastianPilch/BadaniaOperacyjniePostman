@@ -23,10 +23,14 @@ if __name__ == '__main__':
     PP.random_paczka(Kurier, Paczkomat_lst, 170, Mapa)
     Krz.PrintAktualnyStan(Kurier, Paczkomat_lst)
 
+
     best_sol = ABC.Algorytm_ABC(pop, 600, 3, 100, Mapa, Kurier)
+
+    print('\n\n\n\n\nWynik:\n')
     idx = [i for i in range(len(best_sol[0]))]
     plt.plot(idx, best_sol[0])
     plt.scatter(best_sol[1][2], best_sol[1][1])
     plt.show()
-    print(best_sol[1][0])
+    Krz.PrintPath(best_sol[1][0])
+    print('\nMaksymalny znaleziony zysk: ', best_sol[1][1])
 
