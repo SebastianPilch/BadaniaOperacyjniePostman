@@ -38,6 +38,7 @@ def fit(wartosc_zysk_z_drogi):
 
 
 def EmployedBee(original_food_source, limit, Maximize, Minimize, trial, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier):
+    '''Krzyżowanie każdego osobnika przepisanie food source o ile uzyskamy lepszy rezultat'''
     food_source = dp(original_food_source)
     for przodek1_idx, przodek1 in enumerate(food_source):
 
@@ -62,6 +63,10 @@ def EmployedBee(original_food_source, limit, Maximize, Minimize, trial, Mapa: Gr
 
 
 def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier):
+
+    '''Faza krzyżowania na bazie prawdopodobieństwa, liczba krzyżowań musi być równa liczebności populacji,
+     ale nie zawsze krzyżowane są wszystkie osobniki niektóre mogą być krzyżowane kilkukrotnie o ile mają
+     wysoki wskaźnik prawdopodobieństwa'''
     food_source = dp(original_food_source)
     bees_numebr = 0
     probabilities = [i / sum(Minimize) for i in Minimize]
@@ -100,6 +105,7 @@ def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: G
 
 def Scout_bee(original_food_source, Maximize, Minimize, trial, time_limit, scout_limit, max_idx, Mapa,
               kurier: PP.Kurier):
+    ''' Wymiana rozwiązań które nie poprawiły swojego wskaźnika jakości przez więcej niż scout_limit razy na nowe losowe'''
     food_source = dp(original_food_source)
     for bee_idx, bee in enumerate(food_source):
         if trial[bee_idx] > scout_limit and bee_idx != max_idx:
@@ -121,13 +127,17 @@ def Algorytm_ABC(original_food_source, time_limit, scout_limit, MaxIteracje, Map
     iter = 0
     best_sol = []
     while iter < MaxIteracje:
+        '''Employee bee'''
         food_source_phaseEB, Maximize_phase_EB, Minimize_phase_EB, trial_phase_EB = EmployedBee(original_food_source,
                                                                                                 time_limit, Maximize,
                                                                                                 Minimize, trial, Mapa, kurier)
+        '''Onlooker bee'''
         food_source_phaseOlB, Maximize_phase_OlB, Minimize_phase_OlB, trial_phase_OlB, max_idx = OnlookerdBee(
             food_source_phaseEB, Maximize_phase_EB, Minimize_phase_EB, trial_phase_EB, time_limit, Mapa, kurier)
+
         if current_best[1] < Maximize_phase_OlB[max_idx]:
             current_best = food_source_phaseOlB[max_idx], Maximize_phase_OlB[max_idx], iter
+        '''Scout bee'''
         original_food_source, Maximize, Minimize, trial = Scout_bee(food_source_phaseOlB, Maximize_phase_OlB,
                                                                     Minimize_phase_OlB, trial_phase_OlB, time_limit, max_idx,
                                                                     scout_limit, Mapa, kurier)
