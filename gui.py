@@ -118,7 +118,7 @@ def zysk_z_drogi(limit_czasu, path):
 
 
 
-
+2
 while True:
 
         event, values = window.read()
