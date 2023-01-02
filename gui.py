@@ -120,7 +120,7 @@ def zysk_z_drogi(limit_czasu, path):
 
 
 while True:
-    if __name__ == '__main__':
+
         event, values = window.read()
         if event == sg.WINDOW_CLOSED or event == 'Exit':
             break
