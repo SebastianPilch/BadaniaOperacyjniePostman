@@ -119,7 +119,7 @@ def Scout_bee(original_food_source, Maximize, Minimize, trial, time_limit, scout
     return food_source, Maximize, Minimize, trial
 
 
-def Algorytm_ABC(original_food_source, time_limit, scout_limit, MaxIteracje, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier, cros_type:str):
+def Algorytm_ABC(original_food_source, time_limit, scout_limit, MaxIteracje, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier, cros_type:str="Cross"):
     Maximize = [zysk_z_drogi(time_limit, i, Mapa, kurier) for i in original_food_source]
     Minimize = [fit(i) for i in Maximize]
     trial = [0 for i in original_food_source]
