@@ -17,22 +17,27 @@ im = im.resize(size, resample=Image.BICUBIC)
 im.save(r'img/kurier.png')
 
 layout_lst = [[sg.Text("Podaj liczbę paczek UwU")],
-          [sg.Text('(づ๑•ᴗ•๑)づ♡')],
-          [sg.Input(key='-INPUT_PACZKI-',do_not_clear=True)],
-          [sg.Text('Liczba iteracji')],
-          [sg.Input(key='-INPUT_ITERACJE-',do_not_clear=True)],
-          [sg.Text('Limit w fazie scout')],
-          [sg.Input(key='-INPUT_LIMIT_SCOUT-',do_not_clear=True)],
-          [sg.Text('Limit czasowy')],
-          [sg.Input(key='-INPUT_TIME-',do_not_clear=True)],
-          [sg.Text('Podaj liste/liczbe paczkomatów',key='-TEXT_Paczkomat-')],
-          [
-              sg.Radio("Lista",'group 1',key='-RADIO1-',default=True),
-              sg.Radio("Liczba","group 1",key='-RADIO2-')
-          ],
-          [sg.Input(key='-INPUT_Paczkomat-')],
-          [sg.Text('',key='-ERROR-')],
-          [sg.Button('Ok'),sg.Button('Exit')]]
+              [sg.Text('(づ๑•ᴗ•๑)づ♡')],
+              [sg.Input(key='-INPUT_PACZKI-',do_not_clear=True)],
+              [sg.Text('Liczba iteracji')],
+              [sg.Input(key='-INPUT_ITERACJE-',do_not_clear=True)],
+              [sg.Text('Limit w fazie scout')],
+              [sg.Input(key='-INPUT_LIMIT_SCOUT-',do_not_clear=True)],
+              [sg.Text('Limit czasowy')],
+              [sg.Input(key='-INPUT_TIME-',do_not_clear=True)],
+              [sg.Text('Podaj liste/liczbe paczkomatów',key='-TEXT_Paczkomat-')],
+              [
+                sg.Radio("Lista",'group 1',key='-RADIO1-',default=True),
+                sg.Radio("Liczba","group 1",key='-RADIO2-')
+              ],
+              [sg.Input(key='-INPUT_Paczkomat-')],
+              [sg.Text('Podaj sposób krzyżowania',key='-TEXT_Paczkomat-')],
+              [
+                sg.Radio("cross", 'group 2', key='-RADIO3-', default=True),
+                sg.Radio("swap", "group 2", key='-RADIO4-')
+              ],
+              [sg.Text('',key='-ERROR-')],
+              [sg.Button('Ok'),sg.Button('Exit')]]
 layout_img= [
             [sg.Image(size=size, key='-IMAGE-')]]
 
@@ -124,7 +129,9 @@ while True:
         event, values = window.read()
         if event == sg.WINDOW_CLOSED or event == 'Exit':
             break
-
+        cros_type = 'Cross'
+        if values['-RADIO4-'] is True:
+            type = 'swap'
         Kurier = PP.Kurier()
         names = []
         if values['-RADIO1-'] == True:
@@ -150,7 +157,7 @@ while True:
         Krz.PrintAktualnyStan(Kurier, Paczkomat_lst)
 
         for i in range(1):
-            best_sol = ABC.Algorytm_ABC(pop, int(values['-INPUT_TIME-']), int(values['-INPUT_LIMIT_SCOUT-']), int(values['-INPUT_ITERACJE-']), Mapa, Kurier)
+            best_sol = ABC.Algorytm_ABC(pop, int(values['-INPUT_TIME-']), int(values['-INPUT_LIMIT_SCOUT-']), int(values['-INPUT_ITERACJE-']), Mapa, Kurier,cros_type)
 
             print('\n\n\n\n\nWynik ', f'{i}:\n')
             idx = [i for i in range(len(best_sol[0]))]
