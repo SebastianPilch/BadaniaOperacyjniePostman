@@ -150,3 +150,4 @@ def UtworzMape(ListaAdresow, min_odleglosc, max_oleglosc):
                 Mapa.InsertEdges(i, j, r)
                 Mapa.InsertEdges(j, i, r)
     return Mapa
+
