@@ -45,7 +45,7 @@ PP.random_paczka(Kurier10, ListaAdresow10, liczba_paczek, Graf_testowy10)
 
 liczebnosc_populacji = 10
 
-for licz in range(1):
+for licz in range(5):
     counting_time = []
     error = []
 
@@ -54,7 +54,7 @@ for licz in range(1):
     populacja_start = Krz.populacja_start(liczebnosc_populacji, Graf_testowy10)
     w = open(f'Testy_populacji/Test_populacja_{liczebnosc_populacji}.txt', 'wt')
     opt_wynik = Abc.zysk_z_drogi(600, ListaAdresow10, Graf_testowy10, Kurier10)
-    for i in range(10):
+    for i in range(5):
         start_time = time.time()
         best_sol = Abc.Algorytm_ABC(populacja_start, 600, trial, MaxIteracje, Graf_testowy10, Kurier10,
                                     cros_type='swap')
