@@ -64,7 +64,7 @@ for licz in range(1):
         idx = [i for i in range(len(best_sol[0]))]
         plt.plot(idx, best_sol[0])
         plt.scatter(best_sol[1][2], best_sol[1][1], label='wykres zbieżności')
-        plt.axhline(opt_wynik, label='Najlepszy wynik')
+        plt.axhline(opt_wynik, color='red', label='Najlepszy wynik')
         plt.title(f'Zbieżność test {i + 1} dla liczebności populacji równej {liczebnosc_populacji} ')
         plt.xlabel('Numer iteracji')
         plt.ylabel('Maksymalny zysk po iteracji')
