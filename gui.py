@@ -17,7 +17,6 @@ def update_figure(data,data_2):
     x = [int(i) for i in data]
     y = [int(i) for i in data_2]
     axes[0].plot(x,y)
-    axes[0].grid("on")
     figure_canvas_agg.draw()
     figure_canvas_agg.get_tk_widget().pack()
 
