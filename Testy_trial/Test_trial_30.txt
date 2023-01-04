@@ -1,0 +1,54 @@
+
+Wynik 1:
+Najlepsza znaleziona sciezka:
+  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  ai ->  ah ->  aj ->  ak ->  aa
+Maksymalny znaleziony zysk: 3025.9603631821537
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3598.0
+
+
+
+Wynik 2:
+Najlepsza znaleziona sciezka:
+  aj ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  ak ->  aa
+Maksymalny znaleziony zysk: 3145.0
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3598.0
+
+
+
+Wynik 3:
+Najlepsza znaleziona sciezka:
+  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  ak ->  aj ->  aa
+Maksymalny znaleziony zysk: 3065.714285714286
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3598.0
+
+
+
+Wynik 4:
+Najlepsza znaleziona sciezka:
+  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 3244.4285714285716
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3598.0
+
+
+
+Wynik 5:
+Najlepsza znaleziona sciezka:
+  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  ai ->  aj ->  ak ->  ah ->  aa
+Maksymalny znaleziony zysk: 3040.246077467868
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3598.0
+
+
+sredni czas wykonania obliczen dla Trial = 30:
+34.226302 s
+sredni blad wyszukanych rozowiazan wynosi:
+ 13.72 %

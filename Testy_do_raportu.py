@@ -36,26 +36,26 @@ def MapaTestowa(wymiar: int):
 liczba_paczek = 15
 
 trial = 10
-MaxIteracje = 1000
+MaxIteracje = 800
 
 Graf_testowy10, ListaAdresow10 = MapaTestowa(10)
 print(Graf_testowy10)
 Kurier10 = PP.Kurier()
 PP.random_paczka(Kurier10, ListaAdresow10, liczba_paczek, Graf_testowy10)
 
-liczebnosc_populacji = 50
+liczebnosc_populacji = 40
 
-for iter in range(2,6):
-    MaxIteracje = 10 ** iter
+for iter in range(1, 5):
+    Trial = 10 * iter
     counting_time = []
     error = []
-    print('\n\n\n\n\n Test liczba iteracji: ', f'{MaxIteracje}:\n')
+    print('\n\n\n\n\n Test liczba triali w scoucie: ', f'{Trial}:\n')
     populacja_start = Krz.populacja_start(liczebnosc_populacji, Graf_testowy10)
-    w = open(f'Testy_iteracje/Test_iteracji_{MaxIteracje}.txt', 'wt')
+    w = open(f'Testy_trial/Test_trial_{Trial}.txt', 'wt')
     opt_wynik = Abc.zysk_z_drogi(600, ListaAdresow10, Graf_testowy10, Kurier10)
     for i in range(5):
         start_time = time.time()
-        best_sol = Abc.Algorytm_ABC(populacja_start, 600, trial, MaxIteracje, Graf_testowy10, Kurier10,
+        best_sol = Abc.Algorytm_ABC(populacja_start, 600, Trial, MaxIteracje, Graf_testowy10, Kurier10,
                                     cros_type='swap')
         counting_time.append(time.time() - start_time)
 
@@ -64,12 +64,12 @@ for iter in range(2,6):
         plt.plot(idx, best_sol[0])
         plt.scatter(best_sol[1][2], best_sol[1][1], label='wykres zbieżności')
         plt.axhline(opt_wynik, color='red', label='Najlepszy wynik')
-        plt.title(f'Zbieżność test {i + 1} dla liczby iteracji {MaxIteracje} ')
+        plt.title(f'Zbieżność test {i + 1} dla Trial = {Trial} ')
         plt.xlabel('Numer iteracji')
         plt.ylabel('Maksymalny zysk po iteracji')
         plt.grid()
         plt.legend()
-        plt.savefig(f'Testy_iteracje/Wykres_{i + 1}_iteracje_{MaxIteracje}.png')
+        plt.savefig(f'Testy_trial/Wykres_{i + 1}_trial_{Trial}.png')
         plt.show()
 
         find_path = Krz.PrintPath(best_sol[1][0])
@@ -81,7 +81,7 @@ for iter in range(2,6):
         w.write(f'Optymalny zysk ze znanego rozwiazania: {opt_wynik}')
         w.write('\n\n\n')
     w.write(
-        f'sredni czas wykonania obliczen dla liczby iteracji {MaxIteracje}:\n{sum(counting_time) / len(counting_time):.6f} s\n')
+        f'sredni czas wykonania obliczen dla Trial = {Trial}:\n{sum(counting_time) / len(counting_time):.6f} s\n')
     w.write(f'sredni blad wyszukanych rozowiazan wynosi:\n {sum(error)/len(error)/opt_wynik*100:.2f} %\n')
     w.close()
 
