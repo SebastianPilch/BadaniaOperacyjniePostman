@@ -10,6 +10,16 @@ import os
 from PIL import Image,ImageTk
 import ABC_step_1 as ABC
 from matplotlib import use as use_agg
+import matplotlib.figure
+
+def update_figure(data,data_2):
+    axes = fig.axes
+    x = [int(i) for i in data]
+    y = [int(i) for i in data_2]
+    axes[0].plot(x,y)
+    axes[0].grid("on")
+    figure_canvas_agg.draw()
+    figure_canvas_agg.get_tk_widget().pack()
 
 sg.theme('DarkBrown4')
 im = Image.open("img/kurier.png")
@@ -63,19 +73,13 @@ layout=[
 window = sg.Window('Window Title', layout,margins=(0, 0), finalize=True)
 image = ImageTk.PhotoImage(image=im)
 window['-IMAGE-'].update(data=image)
+fig = matplotlib.figure.Figure(figsize=(5,4))
+fig.add_subplot(111).plot([],[])
+figure_canvas_agg = FigureCanvasTkAgg(fig,window["-CANVAS-"].TKCanvas)
+figure_canvas_agg.draw()
+figure_canvas_agg.get_tk_widget().pack()
 
-def creat_plot(x,y):
-    # fig, ax = plt.subplots()
-    plt.plot(x,y)
-    plt.grid('on')
-    return plt.gcf()
 
-def draw_figure(canvas,figure):
-    figure_can = FigureCanvasTkAgg(figure,canvas)
-    figure_can.draw()
-    figure_can.get_tk_widget().pack(side='top',fill='both',expand=1)
-    return figure_can
-use_agg('TkAgg')
 def losowa_sciezka(wymiar: int):
     """
     losowanie ścieżki generowane
@@ -156,20 +160,21 @@ while True:
             Paczkomat_lst.append(PP.Paczkomat(f'{names[i]}'))
 
         Mapa = Graf.UtworzMape(Paczkomat_lst, 9, 60)
-        print(Mapa)
-        pop = Krz.populacja_start(values["-INPUT_POPULATION-"], Mapa)
+        # print(Mapa)
+        pop = Krz.populacja_start(int(values["-INPUT_POPULATION-"]), Mapa)
         Krz.PrintPopulacja(pop)
 
-        PP.random_paczka(Kurier, Paczkomat_lst, 170, Mapa)
+        PP.random_paczka(Kurier, Paczkomat_lst, int(values["-INPUT_PACZKI-"]), Mapa)
         Krz.PrintAktualnyStan(Kurier, Paczkomat_lst)
 
 
         best_sol = ABC.Algorytm_ABC(pop, int(values['-INPUT_TIME-']), int(values['-INPUT_LIMIT_SCOUT-']), int(values['-INPUT_ITERACJE-']), Mapa, Kurier,cros_type)
         idx = [i for i in range(len(best_sol[0]))]
         aa = Krz.PrintPath(best_sol[1][0])
-        draw_figure(window["-CANVAS-"].TKCanvas,creat_plot(idx,best_sol[0]))
+        # draw_figure(window["-CANVAS-"].TKCanvas,creat_plot(idx,best_sol[0]))
+
         window['-PATH-'].update("Najlepsza ścieżka: " + aa)
         window['-GAIN-'].update("Największy zysk: " + str(best_sol[1][1]))
-
+        update_figure(idx,best_sol[0])
 
 window.close()
