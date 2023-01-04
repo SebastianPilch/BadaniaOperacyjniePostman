@@ -60,32 +60,31 @@ def populacja_start(liczebnosc: int, Mapa: Graf.MapaPolaczen):
 
 
 
-def Krzyzowanie(przodek_1: List[PP.Paczkomat], przodek_2: List[PP.Paczkomat],type = 'Cross'):
+def Krzyzowanie(przodek_1: List[PP.Paczkomat], przodek_2: List[PP.Paczkomat]):
     ''' Funkcja krzyżująca dwie podanie ścieżki'''
     potomek: List[PP.Paczkomat] = [None for j in przodek_1]
-    if type == 'Cross':
-        for i in range(len(przodek_1)// 2):
-            potomek[i] = przodek_1[i]
-        for j in range((len(przodek_1)// 2)):
-            found_new_index = j
-            found_new: PP.Paczkomat = przodek_1[j]
-            first_new: PP.Paczkomat = przodek_2[j]
-            while first_new not in potomek:
-                for k in range(len(przodek_2)):
-                    if found_new == przodek_2[k]:
-                        found_new_index = k
-                        if potomek[found_new_index] is None:
-                            potomek[found_new_index] = first_new
-                            break
-                        else:
-                            found_new = przodek_1[k]
-        for i in range(len(przodek_2)):
-            if potomek[i] is None:
-                potomek[i] = przodek_2[i]
+    for i in range(len(przodek_1)// 2):
+        potomek[i] = przodek_1[i]
+    for j in range((len(przodek_1)// 2)):
+        found_new_index = j
+        found_new: PP.Paczkomat = przodek_1[j]
+        first_new: PP.Paczkomat = przodek_2[j]
+        while first_new not in potomek:
+            for k in range(len(przodek_2)):
+                if found_new == przodek_2[k]:
+                    found_new_index = k
+                    if potomek[found_new_index] is None:
+                        potomek[found_new_index] = first_new
+                        break
+                    else:
+                        found_new = przodek_1[k]
+    for i in range(len(przodek_2)):
+        if potomek[i] is None:
+            potomek[i] = przodek_2[i]
 
-    if type == 'swap':
-        potomek = dp(przodek_1)
-        swap_idx1, swap_idx2 = randint(0, len(przodek_1)-1), randint(0, len(przodek_1)-1)
-        potomek[swap_idx1], potomek[swap_idx2] = potomek[swap_idx2], potomek[swap_idx1]
+
+def Swap(przodek):
+    potomek = dp(przodek)
+    swap_idx1, swap_idx2 = randint(0, len(przodek)-1), randint(0, len(przodek)-1)
+    potomek[swap_idx1], potomek[swap_idx2] = potomek[swap_idx2], potomek[swap_idx1]
     return potomek
-

@@ -41,15 +41,20 @@ def EmployedBee(original_food_source, limit, Maximize, Minimize, trial, Mapa: Gr
     '''Krzyżowanie każdego osobnika przepisanie food source o ile uzyskamy lepszy rezultat'''
     food_source = dp(original_food_source)
     for przodek1_idx, przodek1 in enumerate(food_source):
+        potomek = None
+        if cros_type == 'Cross':
+            przodek2_idx = randint(0, len(food_source) - 1)
+            if przodek1_idx == przodek2_idx:
+                if przodek2_idx != len(food_source) - 1:
+                    przodek2_idx += 1
+                else:
+                    przodek2_idx -= 1
 
-        przodek2_idx = randint(0, len(food_source) - 1)
-        if przodek1_idx == przodek2_idx:
-            if przodek2_idx != len(food_source) - 1:
-                przodek2_idx += 1
-            else:
-                przodek2_idx -= 1
+            potomek = Krz.Krzyzowanie(przodek1, original_food_source[przodek2_idx])
 
-        potomek = Krz.Krzyzowanie(przodek1, original_food_source[przodek2_idx],cros_type)
+        if cros_type == 'swap':
+            potomek = Krz.Swap(przodek1)
+
         potomek_max = zysk_z_drogi(limit, potomek, Mapa, kurier)
         potomek_min = fit(potomek_max)
         if potomek_min > Minimize[przodek1_idx]:
@@ -72,34 +77,36 @@ def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: G
     probabilities = [i / sum(Minimize) for i in Minimize]
     current_max = 0
     current_max_idx = 0
-    while bees_numebr != len(original_food_source):
-        for bee_idx, bee in enumerate(food_source):
-            r = random.random()
-            if r < probabilities[bee_idx]:
 
+    for bee_idx, bee in enumerate(food_source):
+        r = random.random()
+        if r < probabilities[bee_idx]:
+            potomek = None
+            if cros_type == 'Cross':
                 przodek2_idx = randint(0, len(food_source) - 1)
                 if bee_idx == przodek2_idx:
                     if przodek2_idx != len(food_source) - 1:
                         przodek2_idx += 1
                     else:
                         przodek2_idx -= 1
+                potomek = Krz.Krzyzowanie(bee, original_food_source[przodek2_idx])
+            if cros_type == 'swap':
+                potomek = Krz.Swap(bee)
 
-                    potomek = Krz.Krzyzowanie(bee, original_food_source[przodek2_idx],cros_type)
-                    potomek_max = zysk_z_drogi(limit, potomek, Mapa, kurier)
-                    potomek_min = fit(potomek_max)
-                    if potomek_min > Minimize[bee_idx]:
-                        trial[bee_idx] += 1
-                    else:
-                        food_source[bee_idx] = potomek
-                        Maximize[bee_idx] = potomek_max
-                        Minimize[bee_idx] = potomek_min
-                        trial[bee_idx] = 0
-                    if current_max < Maximize[bee_idx]:
-                        current_max = Maximize[bee_idx]
-                        current_max_idx = bee_idx
-                    bees_numebr += 1
-            if bees_numebr == len(original_food_source):
-                break
+            potomek_max = zysk_z_drogi(limit, potomek, Mapa, kurier)
+            potomek_min = fit(potomek_max)
+            if potomek_min > Minimize[bee_idx]:
+                trial[bee_idx] += 1
+            else:
+                food_source[bee_idx] = potomek
+                Maximize[bee_idx] = potomek_max
+                Minimize[bee_idx] = potomek_min
+                trial[bee_idx] = 0
+            if current_max < Maximize[bee_idx]:
+                current_max = Maximize[bee_idx]
+                current_max_idx = bee_idx
+                bees_numebr += 1
+
     return food_source, Maximize, Minimize, trial, current_max_idx
 
 
