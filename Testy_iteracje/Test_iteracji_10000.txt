@@ -1,0 +1,20 @@
+
+Wynik 1:
+Najlepsza znaleziona sciezka:
+  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak ->  aa
+Maksymalny znaleziony zysk: 3593.0
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3593.0
+
+
+
+Wynik 2:
+Najlepsza znaleziona sciezka:
+  ak ->  aj ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa
+Maksymalny znaleziony zysk: 3593.0
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3593.0
+
+

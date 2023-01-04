@@ -1,0 +1,104 @@
+
+Wynik 1:
+Najlepsza znaleziona sciezka:
+  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa ->  ak ->  aj ->  ai
+Maksymalny znaleziony zysk: 2793.0
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3049.0
+
+
+
+Wynik 2:
+Najlepsza znaleziona sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  ak ->  aj
+Maksymalny znaleziony zysk: 3004.0
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3049.0
+
+
+
+Wynik 3:
+Najlepsza znaleziona sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 3049.0
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3049.0
+
+
+
+Wynik 4:
+Najlepsza znaleziona sciezka:
+  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak ->  aa
+Maksymalny znaleziony zysk: 3049.0
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3049.0
+
+
+
+Wynik 5:
+Najlepsza znaleziona sciezka:
+  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa ->  ak ->  aj ->  ai
+Maksymalny znaleziony zysk: 2793.0
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3049.0
+
+
+
+Wynik 6:
+Najlepsza znaleziona sciezka:
+  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ak ->  aa ->  ai ->  ab ->  aj
+Maksymalny znaleziony zysk: 2546.820652124372
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3049.0
+
+
+
+Wynik 7:
+Najlepsza znaleziona sciezka:
+  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa ->  ak ->  aj ->  ai
+Maksymalny znaleziony zysk: 2793.0
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3049.0
+
+
+
+Wynik 8:
+Najlepsza znaleziona sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ak ->  aj ->  ai
+Maksymalny znaleziony zysk: 2793.0
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3049.0
+
+
+
+Wynik 9:
+Najlepsza znaleziona sciezka:
+  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa ->  ak ->  aj ->  ai
+Maksymalny znaleziony zysk: 2793.0
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3049.0
+
+
+
+Wynik 10:
+Najlepsza znaleziona sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 3049.0
+Optymalna sciezka:
+  aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 3049.0
+
+
+sredni czas wykonania obliczen dla typu krzyzowania swap:
+59.546006 s
+sredni blad wyszukanych rozowiazan wynosi:
+ 5.99 %

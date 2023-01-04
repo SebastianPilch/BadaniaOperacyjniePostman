@@ -14,6 +14,7 @@ def PrintPath(path):
         else:
             str_ += " " + str(path[i])
     print(str_)
+    return str_
 
 
 def PrintPopulacja(pop):
