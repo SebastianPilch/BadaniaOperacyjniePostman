@@ -22,6 +22,8 @@ layout_lst = [[sg.Text("Podaj liczbę paczek UwU")],
               [sg.Input(key='-INPUT_PACZKI-',do_not_clear=True)],
               [sg.Text('Liczba iteracji')],
               [sg.Input(key='-INPUT_ITERACJE-',do_not_clear=True)],
+              [sg.Text('Liczba populacji')],
+              [sg.Input(key='-INPUT_POPULATION-', do_not_clear=True)],
               [sg.Text('Limit w fazie scout')],
               [sg.Input(key='-INPUT_LIMIT_SCOUT-',do_not_clear=True)],
               [sg.Text('Czas pracy kuriera')],
@@ -70,7 +72,8 @@ def creat_plot(x,y):
 
 def draw_figure(canvas,figure):
     figure_can = FigureCanvasTkAgg(figure,canvas)
-    figure_can.draw()
+    # figure_can.draw()
+    # figure_can.close_event()
     figure_can.get_tk_widget().pack(side='top',fill='both',expand=1)
     return figure_can
 use_agg('TkAgg')
@@ -136,13 +139,13 @@ while True:
             break
         cros_type = 'Cross'
         if values['-RADIO4-'] is True:
-            type = 'swap'
+            cross_type = 'swap'
         Kurier = PP.Kurier()
         names = []
-        if values['-RADIO1-'] == True:
+        if values['-RADIO1-']:
             paczkomat = values['-INPUT_Paczkomat-']
             names = values['-INPUT_Paczkomat-'].split(',')
-        elif values['-RADIO2-'] == True:
+        elif values['-RADIO2-']:
             paczkomat = values['-INPUT_Paczkomat-']
             names = []
             for i in range(int(values['-INPUT_Paczkomat-'])):
@@ -154,8 +157,8 @@ while True:
             Paczkomat_lst.append(PP.Paczkomat(f'{names[i]}'))
 
         Mapa = Graf.UtworzMape(Paczkomat_lst, 9, 60)
-        print(Mapa)
-        pop = Krz.populacja_start(len(names), Mapa)
+        # print(Mapa)
+        pop = Krz.populacja_start(int(values["-INPUT_POPULATION-"]), Mapa)
         Krz.PrintPopulacja(pop)
 
         PP.random_paczka(Kurier, Paczkomat_lst, 170, Mapa)
