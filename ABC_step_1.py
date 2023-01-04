@@ -41,7 +41,7 @@ def EmployedBee(original_food_source, limit, Maximize, Minimize, trial, Mapa: Gr
     '''Krzyżowanie każdego osobnika przepisanie food source o ile uzyskamy lepszy rezultat'''
     food_source = dp(original_food_source)
     for przodek1_idx, przodek1 in enumerate(food_source):
-        potomek = None
+
         if cros_type == 'Cross':
             przodek2_idx = randint(0, len(food_source) - 1)
             if przodek1_idx == przodek2_idx:
@@ -81,7 +81,7 @@ def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: G
     for bee_idx, bee in enumerate(food_source):
         r = random.random()
         if r < probabilities[bee_idx]:
-            potomek = None
+
             if cros_type == 'Cross':
                 przodek2_idx = randint(0, len(food_source) - 1)
                 if bee_idx == przodek2_idx:

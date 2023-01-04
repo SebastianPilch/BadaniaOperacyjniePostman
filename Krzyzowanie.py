@@ -81,7 +81,7 @@ def Krzyzowanie(przodek_1: List[PP.Paczkomat], przodek_2: List[PP.Paczkomat]):
     for i in range(len(przodek_2)):
         if potomek[i] is None:
             potomek[i] = przodek_2[i]
-
+    return potomek
 
 def Swap(przodek):
     potomek = dp(przodek)

@@ -24,7 +24,7 @@ if __name__ == '__main__':
     PP.random_paczka(Kurier, Paczkomat_lst, 70, Mapa)
     Krz.PrintAktualnyStan(Kurier, Paczkomat_lst)
 
-    best_sol = ABC.Algorytm_ABC(pop, 600, 3, 400, Mapa, Kurier, cros_type='swap')
+    best_sol = ABC.Algorytm_ABC(pop, 600, 3, 400, Mapa, Kurier, cros_type='Cross')
 
     idx = [i for i in range(len(best_sol[0]))]
     plt.plot(idx, best_sol[0])
