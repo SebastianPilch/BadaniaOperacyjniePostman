@@ -9,6 +9,7 @@ import io
 import os
 from PIL import Image,ImageTk
 import ABC_step_1 as ABC
+from matplotlib import use as use_agg
 
 sg.theme('DarkBrown4')
 im = Image.open("img/kurier.png")
@@ -23,7 +24,7 @@ layout_lst = [[sg.Text("Podaj liczbę paczek UwU")],
               [sg.Input(key='-INPUT_ITERACJE-',do_not_clear=True)],
               [sg.Text('Limit w fazie scout')],
               [sg.Input(key='-INPUT_LIMIT_SCOUT-',do_not_clear=True)],
-              [sg.Text('Limit czasowy')],
+              [sg.Text('Czas pracy kuriera')],
               [sg.Input(key='-INPUT_TIME-',do_not_clear=True)],
               [sg.Text('Podaj liste/liczbe paczkomatów',key='-TEXT_Paczkomat-')],
               [
@@ -43,7 +44,10 @@ layout_img= [
 
 
 layout_plot = [
-    [sg.Canvas(key="-CANVAS-",size=(500,500))]
+    [sg.Canvas(key="-CANVAS-",size=(500,500))],
+    [sg.Text("",key='-PATH-')],
+    [sg.Text("", key='-GAIN-')]
+
 ]
 layout=[
     [
@@ -59,6 +63,7 @@ image = ImageTk.PhotoImage(image=im)
 window['-IMAGE-'].update(data=image)
 
 def creat_plot(x,y):
+    # fig, ax = plt.subplots()
     plt.plot(x,y)
     plt.grid('on')
     return plt.gcf()
@@ -68,7 +73,7 @@ def draw_figure(canvas,figure):
     figure_can.draw()
     figure_can.get_tk_widget().pack(side='top',fill='both',expand=1)
     return figure_can
-
+use_agg('TkAgg')
 def losowa_sciezka(wymiar: int):
     """
     losowanie ścieżki generowane
@@ -123,7 +128,7 @@ def zysk_z_drogi(limit_czasu, path):
 
 
 
-2
+
 while True:
 
         event, values = window.read()
@@ -159,13 +164,16 @@ while True:
         for i in range(1):
             best_sol = ABC.Algorytm_ABC(pop, int(values['-INPUT_TIME-']), int(values['-INPUT_LIMIT_SCOUT-']), int(values['-INPUT_ITERACJE-']), Mapa, Kurier,cros_type)
 
-            print('\n\n\n\n\nWynik ', f'{i}:\n')
+            # print('\n\n\n\n\nWynik ', f'{i}:\n')
             idx = [i for i in range(len(best_sol[0]))]
             # plt.plot(idx, best_sol[0])
             # plt.scatter(best_sol[1][2], best_sol[1][1])
             # plt.show()
-            # Krz.PrintPath(best_sol[1][0])
+            aa = Krz.PrintPath(best_sol[1][0])
             draw_figure(window["-CANVAS-"].TKCanvas,creat_plot(idx,best_sol[0]))
-            print(f'\nMaksymalny znaleziony zysk: ', best_sol[1][1])
+            # print(f'\nMaksymalny znaleziony zysk: ', best_sol[1][1])
+            window['-PATH-'].update("Najlepsza ścieżka: " + aa)
+            window['-GAIN-'].update("Największy zysk: " + str(best_sol[1][1]))
+
 
 window.close()
