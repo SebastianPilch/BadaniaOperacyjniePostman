@@ -22,6 +22,8 @@ layout_lst = [[sg.Text("Podaj liczbę paczek UwU")],
               [sg.Input(key='-INPUT_PACZKI-',do_not_clear=True)],
               [sg.Text('Liczba iteracji')],
               [sg.Input(key='-INPUT_ITERACJE-',do_not_clear=True)],
+              [sg.Text('Wielkość początkowej populcji')],
+              [sg.Input(key="-INPUT_POPULATION-")],
               [sg.Text('Limit w fazie scout')],
               [sg.Input(key='-INPUT_LIMIT_SCOUT-',do_not_clear=True)],
               [sg.Text('Czas pracy kuriera')],
@@ -155,25 +157,19 @@ while True:
 
         Mapa = Graf.UtworzMape(Paczkomat_lst, 9, 60)
         print(Mapa)
-        pop = Krz.populacja_start(len(names), Mapa)
+        pop = Krz.populacja_start(values["-INPUT_POPULATION-"], Mapa)
         Krz.PrintPopulacja(pop)
 
         PP.random_paczka(Kurier, Paczkomat_lst, 170, Mapa)
         Krz.PrintAktualnyStan(Kurier, Paczkomat_lst)
 
-        for i in range(1):
-            best_sol = ABC.Algorytm_ABC(pop, int(values['-INPUT_TIME-']), int(values['-INPUT_LIMIT_SCOUT-']), int(values['-INPUT_ITERACJE-']), Mapa, Kurier,cros_type)
 
-            # print('\n\n\n\n\nWynik ', f'{i}:\n')
-            idx = [i for i in range(len(best_sol[0]))]
-            # plt.plot(idx, best_sol[0])
-            # plt.scatter(best_sol[1][2], best_sol[1][1])
-            # plt.show()
-            aa = Krz.PrintPath(best_sol[1][0])
-            draw_figure(window["-CANVAS-"].TKCanvas,creat_plot(idx,best_sol[0]))
-            # print(f'\nMaksymalny znaleziony zysk: ', best_sol[1][1])
-            window['-PATH-'].update("Najlepsza ścieżka: " + aa)
-            window['-GAIN-'].update("Największy zysk: " + str(best_sol[1][1]))
+        best_sol = ABC.Algorytm_ABC(pop, int(values['-INPUT_TIME-']), int(values['-INPUT_LIMIT_SCOUT-']), int(values['-INPUT_ITERACJE-']), Mapa, Kurier,cros_type)
+        idx = [i for i in range(len(best_sol[0]))]
+        aa = Krz.PrintPath(best_sol[1][0])
+        draw_figure(window["-CANVAS-"].TKCanvas,creat_plot(idx,best_sol[0]))
+        window['-PATH-'].update("Najlepsza ścieżka: " + aa)
+        window['-GAIN-'].update("Największy zysk: " + str(best_sol[1][1]))
 
 
 window.close()
