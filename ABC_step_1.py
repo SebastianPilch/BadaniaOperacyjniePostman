@@ -111,7 +111,7 @@ def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: G
 
 
 def Scout_bee(original_food_source, Maximize, Minimize, trial, time_limit, scout_limit, max_idx, Mapa,
-              kurier: PP.Kurier,cros_type:str):
+              kurier: PP.Kurier):
     ''' Wymiana rozwiązań które nie poprawiły swojego wskaźnika jakości przez więcej niż scout_limit razy na nowe losowe'''
     food_source = dp(original_food_source)
     for bee_idx, bee in enumerate(food_source):
@@ -147,7 +147,7 @@ def Algorytm_ABC(original_food_source, time_limit, scout_limit, MaxIteracje, Map
         '''Scout bee'''
         original_food_source, Maximize, Minimize, trial = Scout_bee(food_source_phaseOlB, Maximize_phase_OlB,
                                                                     Minimize_phase_OlB, trial_phase_OlB, time_limit, max_idx,
-                                                                    scout_limit, Mapa, kurier,cros_type)
+                                                                    scout_limit, Mapa, kurier)
         iter += 1
         best_sol.append(current_best[1])
     return best_sol, current_best
