@@ -131,6 +131,15 @@ def zysk_z_drogi(limit_czasu, path):
                     zysk_calkowity += edge.Paczkomat_in_.bilans(czas_drogi)
     return zysk_calkowity
 
+def paczk_lst(lista,bol:bool):
+    names = []
+    if bol is True:
+        names = lista.split(',')
+    else:
+        for i in range(int(values['-INPUT_Paczkomat-'])):
+            aa = chr(97 + int(i / 26)) + chr(97 + i % 26)
+            names.append(aa)
+    return names
 
 
 
@@ -143,16 +152,7 @@ while True:
         if values['-RADIO4-'] is True:
             type = 'swap'
         Kurier = PP.Kurier()
-        names = []
-        if values['-RADIO1-'] == True:
-            paczkomat = values['-INPUT_Paczkomat-']
-            names = values['-INPUT_Paczkomat-'].split(',')
-        elif values['-RADIO2-'] == True:
-            paczkomat = values['-INPUT_Paczkomat-']
-            names = []
-            for i in range(int(values['-INPUT_Paczkomat-'])):
-                aa = chr(97 + int(i / 26)) + chr(97 + i % 26)
-                names.append(aa)
+        names = paczk_lst(values['-INPUT_Paczkomat-'],values['-RADIO1-'])
         key_lst = [0]
         Paczkomat_lst = []
         for i in range(len(names)):
@@ -177,3 +177,4 @@ while True:
         update_figure(idx,best_sol[0])
 
 window.close()
+
