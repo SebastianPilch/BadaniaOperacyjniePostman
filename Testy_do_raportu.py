@@ -1,6 +1,6 @@
 import Graf
 import Krzyzowanie as Krz
-import ABC_step_1 as Abc
+import ABC as Abc
 import Paczka_Paczkomat as PP
 from matplotlib import pyplot as plt
 import time

@@ -9,6 +9,8 @@ def PrintPath(path):
     ''' Wypisanie pojedyńczego osobnika na konsolę'''
     str_ = ''
     for i in range(len(path)):
+        if i % 14 == 0:
+            str_ += '\n'
         if i < len(path) - 1:
             str_ += " " + str(path[i]) + " -> "
         else:

@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import Graf
 import Paczka_Paczkomat as PP
-import ABC_step_1 as ABC
+import ABC as ABC
 import Krzyzowanie as Krz
 import time
 

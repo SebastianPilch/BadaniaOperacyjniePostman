@@ -5,7 +5,7 @@ import Graf
 import Paczka_Paczkomat as PP
 import Krzyzowanie as Krz
 from matplotlib import pyplot as plt
-import ABC_step_1 as ABC
+import ABC as ABC
 
 if __name__ == '__main__':
 
