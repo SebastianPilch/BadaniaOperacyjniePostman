@@ -5,6 +5,7 @@ import Graf
 import Paczka_Paczkomat as PP
 import ABC_step_1 as ABC
 import Krzyzowanie as Krz
+import time
 
 _VARS = {'window': False,
          'fig_agg': False,
@@ -44,7 +45,8 @@ layout_lst = [[sg.Text("Podaj liczbę paczek UwU")],
 
 layout_plot = [[sg.Canvas(key='figCanvas')],
                [sg.Text("", key='-PATH-')],
-               [sg.Text("", key='-GAIN-')]
+               [sg.Text("", key='-GAIN-')],
+               [sg.Text('',key='-TIME-')]
                ]
 
 layout=[
@@ -109,11 +111,14 @@ while True:
         Krz.PrintPopulacja(pop)
         PP.random_paczka(Kurier, Paczkomat_lst, int(values["-INPUT_PACZKI-"]), Mapa)
         Krz.PrintAktualnyStan(Kurier, Paczkomat_lst)
+        start_time = time.time()
         best_sol = ABC.Algorytm_ABC(pop, int(values['-INPUT_TIME-']), int(values['-INPUT_LIMIT_SCOUT-']),
                                     int(values['-INPUT_ITERACJE-']), Mapa, Kurier, cros_type)
+        time_test = (time.time() - start_time)
         idx = [i for i in range(len(best_sol[0]))]
         aa = Krz.PrintPath(best_sol[1][0])
         _VARS['window']['-PATH-'].update("Najlepsza ścieżka: " + aa)
         _VARS['window']['-GAIN-'].update("Największy zysk: " + str(best_sol[1][1]))
+        _VARS['window']['-TIME-'].update("Czas pracy alogorytmu: " + str(time_test))
         updateChart(idx,best_sol[0])
 _VARS['window'].close()
