@@ -37,12 +37,12 @@ def fit(wartosc_zysk_z_drogi):
         return 1 + abs(wartosc_zysk_z_drogi)
 
 
-def EmployedBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier,cros_type:str,f_celu=zysk_z_drogi,f_fit = fit):
+def EmployedBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier,cross_type:str,f_celu=zysk_z_drogi,f_fit = fit):
     '''Krzyżowanie każdego osobnika przepisanie food source o ile uzyskamy lepszy rezultat'''
     food_source = dp(original_food_source)
     for przodek1_idx, przodek1 in enumerate(food_source):
 
-        if cros_type == 'Cross':
+        if cross_type == 'Cross':
             przodek2_idx = randint(0, len(food_source) - 1)
             if przodek1_idx == przodek2_idx:
                 if przodek2_idx != len(food_source) - 1:
@@ -52,7 +52,7 @@ def EmployedBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: Gr
 
             potomek = Krz.Cross(przodek1, original_food_source[przodek2_idx])
 
-        if cros_type == 'swap':
+        if cross_type == 'swap':
             potomek = Krz.Swap(przodek1)
 
         potomek_max = f_celu(limit, potomek, Mapa, kurier)
@@ -67,7 +67,7 @@ def EmployedBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: Gr
     return food_source, Maximize, Minimize, trial
 
 
-def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier,cros_type:str):
+def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier,cross_type:str):
 
     '''Faza krzyżowania na bazie prawdopodobieństwa, liczba krzyżowań musi być równa liczebności populacji,
      ale nie zawsze krzyżowane są wszystkie osobniki niektóre mogą być krzyżowane kilkukrotnie o ile mają
@@ -82,7 +82,7 @@ def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: G
         r = random.random()
         if r < probabilities[bee_idx]:
 
-            if cros_type == 'Cross':
+            if cross_type == 'Cross':
                 przodek2_idx = randint(0, len(food_source) - 1)
                 if bee_idx == przodek2_idx:
                     if przodek2_idx != len(food_source) - 1:
@@ -90,7 +90,7 @@ def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: G
                     else:
                         przodek2_idx -= 1
                 potomek = Krz.Cross(bee, original_food_source[przodek2_idx])
-            if cros_type == 'swap':
+            if cross_type == 'swap':
                 potomek = Krz.Swap(bee)
 
             potomek_max = zysk_z_drogi(limit, potomek, Mapa, kurier)
@@ -126,7 +126,7 @@ def Scout_bee(original_food_source, Maximize, Minimize, trial, time_limit, scout
     return food_source, Maximize, Minimize, trial
 
 
-def Algorytm_ABC(original_food_source, time_limit, scout_limit, MaxIteracje, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier, cros_type:str="Cross"):
+def Algorytm_ABC(original_food_source, time_limit, scout_limit, MaxIteracje, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier, cross_type:str="Cross"):
     Maximize = [zysk_z_drogi(time_limit, i, Mapa, kurier) for i in original_food_source]
     Minimize = [fit(i) for i in Maximize]
     trial = [0 for i in original_food_source]
@@ -137,10 +137,10 @@ def Algorytm_ABC(original_food_source, time_limit, scout_limit, MaxIteracje, Map
         '''Employee bee'''
         food_source_phaseEB, Maximize_phase_EB, Minimize_phase_EB, trial_phase_EB = EmployedBee(original_food_source,
                                                                                                 time_limit, Maximize,
-                                                                                                Minimize, trial, Mapa, kurier,cros_type)
+                                                                                                Minimize, trial, Mapa, kurier,cross_type)
         '''Onlooker bee'''
         food_source_phaseOlB, Maximize_phase_OlB, Minimize_phase_OlB, trial_phase_OlB, max_idx = OnlookerdBee(
-            food_source_phaseEB, Maximize_phase_EB, Minimize_phase_EB, trial_phase_EB, time_limit, Mapa, kurier,cros_type)
+            food_source_phaseEB, Maximize_phase_EB, Minimize_phase_EB, trial_phase_EB, time_limit, Mapa, kurier,cross_type)
 
         if current_best[1] < Maximize_phase_OlB[max_idx]:
             current_best = food_source_phaseOlB[max_idx], Maximize_phase_OlB[max_idx], iter
