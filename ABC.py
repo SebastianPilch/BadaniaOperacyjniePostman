@@ -134,9 +134,9 @@ def Algorytm_ABC(original_food_source, time_limit, scout_limit, MaxIteracje, Map
     best_sol = []
     while iter < MaxIteracje:
         '''Employee bee'''
-        food_source_phaseEB, Maximize_phase_EB, Minimize_phase_EB, trial_phase_EB = EmployedBee(original_food_source,
-                                                                                                time_limit, Maximize,
-                                                                                                Minimize, trial, Mapa, kurier,cross_type)
+        food_source_phaseEB, Maximize_phase_EB, Minimize_phase_EB, trial_phase_EB = EmployedBee(original_food_source, Maximize,
+                                                                                                Minimize, trial,
+                                                                                                time_limit, Mapa, kurier,cross_type)
         '''Onlooker bee'''
         food_source_phaseOlB, Maximize_phase_OlB, Minimize_phase_OlB, trial_phase_OlB, max_idx = OnlookerdBee(
             food_source_phaseEB, Maximize_phase_EB, Minimize_phase_EB, trial_phase_EB, time_limit, Mapa, kurier,cross_type)
