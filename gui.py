@@ -97,9 +97,9 @@ while True:
     if event == sg.WIN_CLOSED or event == 'Exit':
         break
     if event == 'Ok':
-        cross_type = 'Cross'
+        cros_type = 'Cross'
         if values['-RADIO4-'] is True:
-            cross_type = 'swap'
+            type = 'swap'
         Kurier = PP.Kurier()
         names = paczk_lst(values['-INPUT_Paczkomat-'], values['-RADIO1-'])
         key_lst = [0]
@@ -113,7 +113,7 @@ while True:
         Krz.PrintAktualnyStan(Kurier, Paczkomat_lst)
         start_time = time.time()
         best_sol = ABC.Algorytm_ABC(pop, int(values['-INPUT_TIME-']), int(values['-INPUT_LIMIT_SCOUT-']),
-                                    int(values['-INPUT_ITERACJE-']), Mapa, Kurier, cross_type)
+                                    int(values['-INPUT_ITERACJE-']), Mapa, Kurier, cros_type)
         time_test = (time.time() - start_time)
         idx = [i for i in range(len(best_sol[0]))]
         aa = Krz.PrintPath(best_sol[1][0])
