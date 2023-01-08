@@ -67,7 +67,7 @@ def EmployedBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: Gr
     return food_source, Maximize, Minimize, trial
 
 
-def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier,cross_type:str):
+def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier,cross_type:str, f_celu = zysk_z_drogi, f_fit = fit):
 
     '''Faza krzyżowania na bazie prawdopodobieństwa, liczba krzyżowań musi być równa liczebności populacji,
      ale nie zawsze krzyżowane są wszystkie osobniki niektóre mogą być krzyżowane kilkukrotnie o ile mają
@@ -93,8 +93,8 @@ def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: G
             if cross_type == 'swap':
                 potomek = Krz.Swap(bee)
 
-            potomek_max = zysk_z_drogi(limit, potomek, Mapa, kurier)
-            potomek_min = fit(potomek_max)
+            potomek_max = f_celu(limit, potomek, Mapa, kurier)
+            potomek_min = f_fit(potomek_max)
             if potomek_min > Minimize[bee_idx]:
                 trial[bee_idx] += 1
             else:
