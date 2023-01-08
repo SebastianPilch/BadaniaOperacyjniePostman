@@ -1,0 +1,247 @@
+
+Wynik 1 dla krzy¿owania typu Cross:
+Najlepsza znaleziona sciezka:
+ 
+ ab ->  aa ->  ak ->  ad ->  ag ->  ah ->  ai ->  ae ->  aj ->  af ->  ac
+Maksymalny znaleziony zysk: 3437.125071150695
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dla krzy¿owania typu Cross:
+Najlepsza znaleziona sciezka:
+ 
+ ab ->  ac ->  ak ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  aa ->  aj
+Maksymalny znaleziony zysk: 2992.8466182177344
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dla krzy¿owania typu Cross:
+Najlepsza znaleziona sciezka:
+ 
+ ac ->  ab ->  aa ->  ad ->  af ->  ag ->  ak ->  aj ->  ai ->  ae ->  ah
+Maksymalny znaleziony zysk: 3523.765857018068
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dla krzy¿owania typu Cross:
+Najlepsza znaleziona sciezka:
+ 
+ ag ->  ah ->  ai ->  aj ->  ak ->  ab ->  ad ->  ae ->  af ->  aa ->  ac
+Maksymalny znaleziony zysk: 3919.7331153501323
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dla krzy¿owania typu Cross:
+Najlepsza znaleziona sciezka:
+ 
+ ag ->  ah ->  ai ->  aj ->  ak ->  ab ->  ad ->  af ->  ae ->  aa ->  ac
+Maksymalny znaleziony zysk: 3919.5370961993913
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 6 dla krzy¿owania typu Cross:
+Najlepsza znaleziona sciezka:
+ 
+ ac ->  ab ->  aa ->  ad ->  ak ->  ag ->  af ->  ae ->  ah ->  ai ->  aj
+Maksymalny znaleziony zysk: 3796.2282914757056
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 7 dla krzy¿owania typu Cross:
+Najlepsza znaleziona sciezka:
+ 
+ ac ->  ab ->  aa ->  aj ->  ah ->  ag ->  af ->  ae ->  ad ->  ak ->  ai
+Maksymalny znaleziony zysk: 3349.6108324957304
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 8 dla krzy¿owania typu Cross:
+Najlepsza znaleziona sciezka:
+ 
+ ac ->  ab ->  aa ->  ag ->  ak ->  aj ->  ad ->  ae ->  af ->  ah ->  ai
+Maksymalny znaleziony zysk: 3767.656862904277
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 9 dla krzy¿owania typu Cross:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ae ->  ad ->  ak ->  aj ->  ai ->  ah ->  ag ->  af
+Maksymalny znaleziony zysk: 4060.7966861273644
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 10 dla krzy¿owania typu Cross:
+Najlepsza znaleziona sciezka:
+ 
+ af ->  ae ->  ad ->  ab ->  ac ->  ak ->  aj ->  ai ->  ah ->  ag ->  aa
+Maksymalny znaleziony zysk: 3457.2648953033627
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 1 dla krzy¿owania typu swap:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dla krzy¿owania typu swap:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dla krzy¿owania typu swap:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dla krzy¿owania typu swap:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dla krzy¿owania typu swap:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 6 dla krzy¿owania typu swap:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 7 dla krzy¿owania typu swap:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 8 dla krzy¿owania typu swap:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 9 dla krzy¿owania typu swap:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 10 dla krzy¿owania typu swap:
+Najlepsza znaleziona sciezka:
+ 
+ aj ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+-----------------------------------------------------------------
+|  Krzyzowanie   |       Cross        |        swap        |
+-----------------------------------------------------------------
+|    sredni czas |     70.600196      |     53.774651      |
+-----------------------------------------------------------------
+|    sredni blad |       45.05        |        0.0         |
+-----------------------------------------------------------------

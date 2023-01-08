@@ -1,0 +1,307 @@
+
+Wynik 1 dal liczby iteracji 100:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ak ->  ai ->  aj
+Maksymalny znaleziony zysk: 5553.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dal liczby iteracji 100:
+Najlepsza znaleziona sciezka:
+ 
+ ak ->  aj ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ab ->  ac ->  aa
+Maksymalny znaleziony zysk: 5099.020475368323
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dal liczby iteracji 100:
+Najlepsza znaleziona sciezka:
+ 
+ ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa ->  aj ->  ai ->  ak
+Maksymalny znaleziony zysk: 5530.635012078593
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dal liczby iteracji 100:
+Najlepsza znaleziona sciezka:
+ 
+ ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ak ->  ah ->  ai ->  aa ->  aj
+Maksymalny znaleziony zysk: 4842.633575740076
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dal liczby iteracji 100:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  ak ->  aj
+Maksymalny znaleziony zysk: 5872.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 1 dal liczby iteracji 500:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dal liczby iteracji 500:
+Najlepsza znaleziona sciezka:
+ 
+ ak ->  aj ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dal liczby iteracji 500:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dal liczby iteracji 500:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dal liczby iteracji 500:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 1 dal liczby iteracji 1000:
+Najlepsza znaleziona sciezka:
+ 
+ ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  aa ->  ak
+Maksymalny znaleziony zysk: 6370.635012078593
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dal liczby iteracji 1000:
+Najlepsza znaleziona sciezka:
+ 
+ aj ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dal liczby iteracji 1000:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dal liczby iteracji 1000:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dal liczby iteracji 1000:
+Najlepsza znaleziona sciezka:
+ 
+ ak ->  aj ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 1 dal liczby iteracji 1500:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dal liczby iteracji 1500:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dal liczby iteracji 1500:
+Najlepsza znaleziona sciezka:
+ 
+ ak ->  aj ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dal liczby iteracji 1500:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dal liczby iteracji 1500:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 1 dal liczby iteracji 2000:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dal liczby iteracji 2000:
+Najlepsza znaleziona sciezka:
+ 
+ ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa ->  ak ->  aj
+Maksymalny znaleziony zysk: 5872.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dal liczby iteracji 2000:
+Najlepsza znaleziona sciezka:
+ 
+ ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak ->  aa
+Maksymalny znaleziony zysk: 6393.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dal liczby iteracji 2000:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dal liczby iteracji 2000:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+|Liczba iteracji |        100         |        500         |        1000        |        1500        |        2000        |
+-----------------------------------------------------------------------------------------------------------------------------
+|    sredni czas |      3.538342      |     17.031331      |     34.037796      |     52.539205      |     87.929754      |
+-----------------------------------------------------------------------------------------------------------------------------
+|    sredni blad |       18.39        |        0.0         |        0.67        |        0.0         |        2.79        |
+-----------------------------------------------------------------------------------------------------------------------------
