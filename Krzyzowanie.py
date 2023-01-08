@@ -62,7 +62,7 @@ def populacja_start(liczebnosc: int, Mapa: Graf.MapaPolaczen):
 
 
 
-def Krzyzowanie(przodek_1: List[PP.Paczkomat], przodek_2: List[PP.Paczkomat]):
+def Cross(przodek_1: List[PP.Paczkomat], przodek_2: List[PP.Paczkomat]):
     ''' Funkcja krzyżująca dwie podanie ścieżki'''
     potomek: List[PP.Paczkomat] = [None for j in przodek_1]
     for i in range(len(przodek_1)// 2):

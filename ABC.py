@@ -1,7 +1,7 @@
 from random import randint
 import random
 from copy import deepcopy as dp
-import Krzyzowanie as Krz
+import Cross as Krz
 import main
 import Graf
 import Paczka_Paczkomat as PP
@@ -37,7 +37,7 @@ def fit(wartosc_zysk_z_drogi):
         return 1 + abs(wartosc_zysk_z_drogi)
 
 
-def EmployedBee(original_food_source, limit, Maximize, Minimize, trial, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier,cros_type:str):
+def EmployedBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier,cros_type:str,f_celu=zysk_z_drogi,f_fit = fit):
     '''Krzyżowanie każdego osobnika przepisanie food source o ile uzyskamy lepszy rezultat'''
     food_source = dp(original_food_source)
     for przodek1_idx, przodek1 in enumerate(food_source):
@@ -50,13 +50,13 @@ def EmployedBee(original_food_source, limit, Maximize, Minimize, trial, Mapa: Gr
                 else:
                     przodek2_idx -= 1
 
-            potomek = Krz.Krzyzowanie(przodek1, original_food_source[przodek2_idx])
+            potomek = Krz.Cross(przodek1, original_food_source[przodek2_idx])
 
         if cros_type == 'swap':
             potomek = Krz.Swap(przodek1)
 
-        potomek_max = zysk_z_drogi(limit, potomek, Mapa, kurier)
-        potomek_min = fit(potomek_max)
+        potomek_max = f_celu(limit, potomek, Mapa, kurier)
+        potomek_min = f_fit(potomek_max)
         if potomek_min > Minimize[przodek1_idx]:
             trial[przodek1_idx] += 1
         else:
@@ -89,7 +89,7 @@ def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: G
                         przodek2_idx += 1
                     else:
                         przodek2_idx -= 1
-                potomek = Krz.Krzyzowanie(bee, original_food_source[przodek2_idx])
+                potomek = Krz.Cross(bee, original_food_source[przodek2_idx])
             if cros_type == 'swap':
                 potomek = Krz.Swap(bee)
 
