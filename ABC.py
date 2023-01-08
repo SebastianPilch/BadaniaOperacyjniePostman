@@ -1,7 +1,7 @@
 from random import randint
 import random
 from copy import deepcopy as dp
-import Cross as Krz
+import Krzyzowanie as Krz
 import main
 import Graf
 import Paczka_Paczkomat as PP
@@ -27,6 +27,8 @@ def zysk_z_drogi(limit_czasu, path, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier):
                     kolejny = path[2 + i]
                 if czas_drogi <= limit_czasu:
                     zysk_calkowity += edge.Paczkomat_in_.bilans(czas_drogi)
+                else:
+                    break
     return zysk_calkowity
 
 
@@ -73,11 +75,9 @@ def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: G
      ale nie zawsze krzyżowane są wszystkie osobniki niektóre mogą być krzyżowane kilkukrotnie o ile mają
      wysoki wskaźnik prawdopodobieństwa'''
     food_source = dp(original_food_source)
-    bees_numebr = 0
     probabilities = [i / sum(Minimize) for i in Minimize]
-    current_max = 0
-    current_max_idx = 0
-
+    Onlooker_max = 0
+    max_idx = 0
     for bee_idx, bee in enumerate(food_source):
         r = random.random()
         if r < probabilities[bee_idx]:
@@ -102,31 +102,30 @@ def OnlookerdBee(original_food_source, Maximize, Minimize, trial, limit, Mapa: G
                 Maximize[bee_idx] = potomek_max
                 Minimize[bee_idx] = potomek_min
                 trial[bee_idx] = 0
-            if current_max < Maximize[bee_idx]:
-                current_max = Maximize[bee_idx]
-                current_max_idx = bee_idx
-                bees_numebr += 1
+    for max_val_idx, max_val in enumerate(Maximize):
+        if Onlooker_max < max_val:
+            Onlooker_max = max_val
+            max_idx = max_val_idx
+    return food_source, Maximize, Minimize, trial, max_idx
 
-    return food_source, Maximize, Minimize, trial, current_max_idx
 
-
-def Scout_bee(original_food_source, Maximize, Minimize, trial, time_limit, scout_limit, max_idx, Mapa,
-              kurier: PP.Kurier):
+def Scout_bee(original_food_source, Maximize, Minimize, trial, limit, scout_limit, max_idx, Mapa,
+              kurier: PP.Kurier, f_celu = zysk_z_drogi, f_fit = fit, f_losujaca=Krz.losowa_sciezka):
     ''' Wymiana rozwiązań które nie poprawiły swojego wskaźnika jakości przez więcej niż scout_limit razy na nowe losowe'''
     food_source = dp(original_food_source)
     for bee_idx, bee in enumerate(food_source):
         if trial[bee_idx] > scout_limit and bee_idx != max_idx:
-            new_solution = Krz.losowa_sciezka(Mapa)
+            new_solution = f_losujaca(Mapa)
             food_source[bee_idx] = new_solution
-            new_max = zysk_z_drogi(time_limit, new_solution, Mapa, kurier)
+            new_max = f_celu(limit, new_solution, Mapa, kurier)
             Maximize[bee_idx] = new_max
-            Minimize[bee_idx] = fit(new_max)
+            Minimize[bee_idx] = f_fit(new_max)
             trial[bee_idx] = 0
 
     return food_source, Maximize, Minimize, trial
 
 
-def Algorytm_ABC(original_food_source, time_limit, scout_limit, MaxIteracje, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier, cross_type:str="Cross"):
+def Algorytm_ABC(original_food_source, time_limit, scout_limit, MaxIteracje, Mapa: Graf.MapaPolaczen, kurier: PP.Kurier,cross_type:str="swap"):
     Maximize = [zysk_z_drogi(time_limit, i, Mapa, kurier) for i in original_food_source]
     Minimize = [fit(i) for i in Maximize]
     trial = [0 for i in original_food_source]
