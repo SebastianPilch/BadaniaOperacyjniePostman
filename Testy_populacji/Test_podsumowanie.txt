@@ -1,0 +1,307 @@
+
+Wynik 1 dla populacji wielkoœci 10:
+Najlepsza znaleziona sciezka:
+ 
+ af ->  ae ->  ad ->  ac ->  ab ->  aa ->  aj ->  ai ->  ah ->  ag ->  ak
+Maksymalny znaleziony zysk: 5088.086092928385
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dla populacji wielkoœci 10:
+Najlepsza znaleziona sciezka:
+ 
+ ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak ->  ab ->  aa ->  ac
+Maksymalny znaleziony zysk: 5099.020475368323
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dla populacji wielkoœci 10:
+Najlepsza znaleziona sciezka:
+ 
+ af ->  ae ->  ad ->  ac ->  ab ->  ak ->  ag ->  ah ->  aa ->  aj ->  ai
+Maksymalny znaleziony zysk: 4458.860548366642
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dla populacji wielkoœci 10:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  ak ->  aj ->  ag ->  af ->  ai ->  ah
+Maksymalny znaleziony zysk: 5004.818640093219
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dla populacji wielkoœci 10:
+Najlepsza znaleziona sciezka:
+ 
+ ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa ->  ak ->  aj ->  ai ->  ah
+Maksymalny znaleziony zysk: 5492.633574810496
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 1 dla populacji wielkoœci 20:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ak ->  aj ->  ai
+Maksymalny znaleziony zysk: 5553.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dla populacji wielkoœci 20:
+Najlepsza znaleziona sciezka:
+ 
+ ab ->  ac ->  ad ->  ae ->  af ->  ag ->  aa ->  ak ->  ah ->  ai ->  aj
+Maksymalny znaleziony zysk: 5269.678053476358
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dla populacji wielkoœci 20:
+Najlepsza znaleziona sciezka:
+ 
+ ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak ->  aa
+Maksymalny znaleziony zysk: 6393.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dla populacji wielkoœci 20:
+Najlepsza znaleziona sciezka:
+ 
+ aj ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dla populacji wielkoœci 20:
+Najlepsza znaleziona sciezka:
+ 
+ ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aa ->  ak ->  aj
+Maksymalny znaleziony zysk: 5650.635012078593
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 1 dla populacji wielkoœci 30:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  ak ->  aj
+Maksymalny znaleziony zysk: 5872.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dla populacji wielkoœci 30:
+Najlepsza znaleziona sciezka:
+ 
+ aj ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dla populacji wielkoœci 30:
+Najlepsza znaleziona sciezka:
+ 
+ ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  aa ->  ak
+Maksymalny znaleziony zysk: 6370.635012078593
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dla populacji wielkoœci 30:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dla populacji wielkoœci 30:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 1 dla populacji wielkoœci 40:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dla populacji wielkoœci 40:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dla populacji wielkoœci 40:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dla populacji wielkoœci 40:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dla populacji wielkoœci 40:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 1 dla populacji wielkoœci 50:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dla populacji wielkoœci 50:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dla populacji wielkoœci 50:
+Najlepsza znaleziona sciezka:
+ 
+ ak ->  aj ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dla populacji wielkoœci 50:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dla populacji wielkoœci 50:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+|Wielkosc populacji|         10         |         20         |         30         |         40         |         50         |
+-----------------------------------------------------------------------------------------------------------------------------
+  |    sredni czas |     11.578663      |     24.285293      |     37.470333      |     50.358192      |     62.740815      |
+-----------------------------------------------------------------------------------------------------------------------------
+  |    sredni blad |       23.72        |       10.62        |        2.86        |        0.0         |        0.0         |
+-----------------------------------------------------------------------------------------------------------------------------

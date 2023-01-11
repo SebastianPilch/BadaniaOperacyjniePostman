@@ -1,0 +1,307 @@
+
+Wynik 1 dla liczby triali 10:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  ak ->  aj
+Maksymalny znaleziony zysk: 5872.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dla liczby triali 10:
+Najlepsza znaleziona sciezka:
+ 
+ ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  aa ->  ak
+Maksymalny znaleziony zysk: 6370.635012078593
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dla liczby triali 10:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dla liczby triali 10:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dla liczby triali 10:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 1 dla liczby triali 20:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dla liczby triali 20:
+Najlepsza znaleziona sciezka:
+ 
+ ak ->  aj ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dla liczby triali 20:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dla liczby triali 20:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dla liczby triali 20:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 1 dla liczby triali 30:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dla liczby triali 30:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dla liczby triali 30:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dla liczby triali 30:
+Najlepsza znaleziona sciezka:
+ 
+ aj ->  ai ->  ah ->  ag ->  af ->  ae ->  ad ->  ac ->  ab ->  aa ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dla liczby triali 30:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 1 dla liczby triali 40:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dla liczby triali 40:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dla liczby triali 40:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dla liczby triali 40:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dla liczby triali 40:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 1 dla liczby triali 50:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 2 dla liczby triali 50:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 3 dla liczby triali 50:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 4 dla liczby triali 50:
+Najlepsza znaleziona sciezka:
+ 
+ ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak ->  aa
+Maksymalny znaleziony zysk: 6393.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+
+Wynik 5 dla liczby triali 50:
+Najlepsza znaleziona sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Maksymalny znaleziony zysk: 6592.0
+Optymalna sciezka:
+ 
+ aa ->  ab ->  ac ->  ad ->  ae ->  af ->  ag ->  ah ->  ai ->  aj ->  ak
+Optymalny zysk ze znanego rozwiazania: 6592.0
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+ |   Liczba triali |         10         |         20         |         30         |         40         |         50         |
+-----------------------------------------------------------------------------------------------------------------------------
+  |    sredni czas |      51.74804      |     56.389502      |     56.173077      |     55.857858      |     56.419775      |
+-----------------------------------------------------------------------------------------------------------------------------
+  |    sredni blad |        2.86        |        0.0         |        0.0         |        0.0         |        0.6         |
+-----------------------------------------------------------------------------------------------------------------------------
