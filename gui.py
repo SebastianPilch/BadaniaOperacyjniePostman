@@ -17,8 +17,7 @@ def draw_figure(canvas, figure):
     figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
     return figure_canvas_agg
 
-layout_lst = [[sg.Text("Podaj liczbę paczek UwU")],
-              [sg.Text('(づ๑•ᴗ•๑)づ♡')],
+layout_lst = [[sg.Text("Podaj liczbę paczek")],
               [sg.Input(key='-INPUT_PACZKI-',do_not_clear=True)],
               [sg.Text('Liczba iteracji')],
               [sg.Input(key='-INPUT_ITERACJE-',do_not_clear=True)],
@@ -56,7 +55,7 @@ layout=[
         sg.Column(layout_plot),
     ]
 ]
-_VARS['window'] = sg.Window('Kurier APP 0.9',
+_VARS['window'] = sg.Window('Kurier APP 1.1',
                             layout,
                             finalize=True,
                             resizable=True,
